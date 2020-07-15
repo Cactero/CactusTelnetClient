@@ -60,7 +60,7 @@ public class BTC_ConnectionManager
         this.port = port;
         this.loginName = null;
         updateTitle(true);
-        BTC_MainPanel.setIconImage(BTC_MainPanel.getWindows()[0], "Connecting");
+        BTC_MainPanel.setIconImage(BTC_MainPanel.getWindows()[0], "Connected");
 
         startConnectThread();
     }
