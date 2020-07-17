@@ -215,6 +215,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
         chkIgnoreErrors.setSelected(BukkitTelnetClient.config.filterIgnoreErrors);
         chkShowAdminChatOnly.setSelected(BukkitTelnetClient.config.filterShowAdminChatOnly);
         chkIgnoreAsyncWorldEdit.setSelected(BukkitTelnetClient.config.filterIgnoreAsyncWorldEdit);
+        chkIgnoreGuildChat.setSelected(BukkitTelnetClient.config.filterIgnoreGuildChat);
 
         toggleComponents(false);
 
@@ -654,6 +655,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
         chkIgnoreServerCommands = new javax.swing.JCheckBox();
         chkIgnoreWarnings = new javax.swing.JCheckBox();
         chkIgnoreAsyncWorldEdit = new javax.swing.JCheckBox();
+        chkIgnoreGuildChat = new javax.swing.JCheckBox();
         commandsPanel = new javax.swing.JPanel();
         favoriteButtonsPanelHolder = new javax.swing.JPanel();
         favoriteButtonsPanelScroll = new javax.swing.JScrollPane();
@@ -748,7 +750,10 @@ public class BTC_MainPanel extends javax.swing.JFrame
         mainOutput.setEditable(false);
         mainOutput.setBorder(null);
         mainOutputScoll.setViewportView(mainOutput);
-        mainOutput.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+
+        font = themes.lastSelectedFont;
+        fontSize = themes.lastSelectedFontSize;
+        mainOutput.setFont(new java.awt.Font(font, 0, fontSize)); // NOI18N
 
         btnDisconnect.setText("Disconnect");
         btnDisconnect.setEnabled(false);
@@ -947,6 +952,13 @@ public class BTC_MainPanel extends javax.swing.JFrame
             }
         });
 
+        chkIgnoreGuildChat.setText("Ignore GuildChat");
+        chkIgnoreGuildChat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkIgnoreGuildChatActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout filterPanelLayout = new javax.swing.GroupLayout(filterPanel);
         filterPanel.setLayout(filterPanelLayout);
         filterPanelLayout.setHorizontalGroup(
@@ -960,7 +972,8 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                         .addComponent(chkIgnoreErrors)
                                         .addComponent(chkIgnoreServerCommands)
                                         .addComponent(chkIgnoreWarnings)
-                                        .addComponent(chkIgnoreAsyncWorldEdit))
+                                        .addComponent(chkIgnoreAsyncWorldEdit)
+                                        .addComponent(chkIgnoreGuildChat))
                                 .addContainerGap(100, Short.MAX_VALUE))
         );
         filterPanelLayout.setVerticalGroup(
@@ -980,6 +993,8 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                 .addComponent(chkShowAdminChatOnly, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(chkIgnoreAsyncWorldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkIgnoreGuildChat, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(449, Short.MAX_VALUE))
         );
 
@@ -1638,8 +1653,8 @@ public class BTC_MainPanel extends javax.swing.JFrame
         fontLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fontLabel.setText("Font");
 
-        fontSelect.setText("Courier New");
-        fontSizeSelect.setText("12");
+        fontSelect.setText(font);
+        fontSizeSelect.setText(String.valueOf(fontSize));
 
         javax.swing.GroupLayout fontPanelLayout = new javax.swing.GroupLayout(fontPanel);
         fontPanel.setLayout(fontPanelLayout);
@@ -1832,11 +1847,15 @@ public class BTC_MainPanel extends javax.swing.JFrame
         this.fontSizeString = fontSizeSelect.getText();
         this.fontSize = Integer.parseInt(fontSizeString);
         mainOutput.setFont(new java.awt.Font(mainOutput.getFont().getFontName(), 0, fontSize)); // NOI18N
+        themes.lastSelectedFontSize = fontSize;
+        BukkitTelnetClient.config.save();
     }//GEN-LAST:event_fontSizeSetActionPerformed
 
     private void fontSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fontSetActionPerformed
         this.font = fontSelect.getText();
         mainOutput.setFont(new java.awt.Font(font, 0, mainOutput.getFont().getSize())); // NOI18N
+        themes.lastSelectedFont = font;
+        BukkitTelnetClient.config.save();
     }//GEN-LAST:event_fontSetActionPerformed
 
 
@@ -2020,6 +2039,11 @@ public class BTC_MainPanel extends javax.swing.JFrame
         BukkitTelnetClient.config.save();
     }//GEN-LAST:event_chkIgnoreAsyncWorldEditActionPerformed
 
+    private void chkIgnoreGuildChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkIgnoreGuildChatActionPerformed
+        BukkitTelnetClient.config.filterIgnoreGuildChat = chkIgnoreGuildChat.isSelected();
+        BukkitTelnetClient.config.save();
+    }//GEN-LAST:event_chkIgnoreGuildChatActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminChatLabel;
     private javax.swing.JButton adminChatSend;
@@ -2074,6 +2098,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
     private javax.swing.JCheckBox chkIgnoreWarnings;
     private javax.swing.JCheckBox chkShowAdminChatOnly;
     private javax.swing.JCheckBox chkShowChatOnly;
+    private javax.swing.JCheckBox chkIgnoreGuildChat;
     private javax.swing.JButton clearLogs;
     private javax.swing.JPanel commandsPanel;
     private javax.swing.JPanel favoriteButtonsPanel;
@@ -2129,12 +2154,12 @@ public class BTC_MainPanel extends javax.swing.JFrame
     private javax.swing.JTextField fontSizeSelect;
     private javax.swing.JButton fontSizeSet;
     private javax.swing.JLabel fontSizeLabel;
-    private String fontSizeString;
-    private int fontSize;
+    public static String fontSizeString;
+    public static int fontSize;
     private javax.swing.JLabel fontLabel;
     private javax.swing.JTextField fontSelect;
     private javax.swing.JButton fontSet;
-    private String font;
+    public static String font;
     // End of variables declaration//GEN-END:variables
 
     public javax.swing.JButton getBtnConnect()
@@ -2205,6 +2230,11 @@ public class BTC_MainPanel extends javax.swing.JFrame
     public JCheckBox getChkIgnoreAsyncWorldEdit()
     {
         return chkIgnoreAsyncWorldEdit;
+    }
+
+    public JCheckBox getChkIgnoreGuildChat()
+    {
+        return chkIgnoreGuildChat;
     }
 
     public List<PlayerInfo> getPlayerList()

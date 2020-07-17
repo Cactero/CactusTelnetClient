@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2012-2017 Steven Lawson
  *
  * This file is part of FreedomTelnetClient.
@@ -70,7 +70,7 @@ public class BTC_TelnetMessage extends BTC_ConsoleMessage
                     && !isType(BTC_LogMessageType.DISCORD_CHAT_MESSAGE)
                     && !isType(BTC_LogMessageType.ADMINSAY_MESSAGE);
         }
-        
+
         if (mainPanel.getChkIgnorePreprocessCommands().isSelected() && isType(BTC_LogMessageType.PREPROCESS_COMMAND))
         {
             return true;
@@ -80,28 +80,33 @@ public class BTC_TelnetMessage extends BTC_ConsoleMessage
         {
             return true;
         }
-        
+
         if (mainPanel.getChkIgnoreWarnings().isSelected() && isType(BTC_LogMessageType.WARNING_MESSAGE))
         {
             return true;
         }
-        
+
         if (mainPanel.getChkIgnoreErrors().isSelected() && isType(BTC_LogMessageType.ERROR_MESSAGE))
         {
             return true;
         }
-        
+
         if (mainPanel.getChkIgnoreErrors().isSelected() && isType(BTC_LogMessageType.TRACEBACK))
         {
             return true;
         }
-        
+
         if (mainPanel.getChkShowAdminChatOnly().isSelected() && !isType(BTC_LogMessageType.ADMINSAY_MESSAGE))
         {
             return true;
         }
-        
+
         if (mainPanel.getChkIgnoreAsyncWorldEdit().isSelected() && isType(BTC_LogMessageType.ASYNC_WORLD_EDIT))
+        {
+            return true;
+        }
+
+        if (mainPanel.getChkIgnoreGuildChat().isSelected() && isType(BTC_LogMessageType.GUILD_CHAT))
         {
             return true;
         }
@@ -142,7 +147,9 @@ public class BTC_TelnetMessage extends BTC_ConsoleMessage
         //
         PREPROCESS_COMMAND(PATTERN_PREFIX + "\\[PREPROCESS_COMMAND\\] ", DARK_GREEN),
         //
-        ISSUED_SERVER_COMMAND(PATTERN_PREFIX + ".+? issued server command: ");
+        ISSUED_SERVER_COMMAND(PATTERN_PREFIX + ".+? issued server command: "),
+        //
+        GUILD_CHAT(PATTERN_PREFIX + "\\[TFGuilds\\] \\[Guild Chat | .+?\\] .+?: ", DARK_GREEN);
 
         private final Pattern messagePattern;
         private final Color color;

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2012-2017 Steven Lawson
  *
  * This file is part of FreedomTelnetClient.
@@ -45,6 +45,7 @@ public class BTC_ConfigLoader
     public boolean filterIgnoreErrors = false;
     public boolean filterShowAdminChatOnly = false;
     public boolean filterIgnoreAsyncWorldEdit = false;
+    public boolean filterIgnoreGuildChat = false;
 
     public BTC_ConfigLoader()
     {
@@ -144,42 +145,46 @@ public class BTC_ConfigLoader
 
         return false;
     }
-    
+
     public Element filtersToXML(Document doc)
     {
         Element filters = doc.createElement("filters");
-        
+
         Element ignorePreprocessCommands = doc.createElement("ignorePreprocessCommands");
         ignorePreprocessCommands.appendChild(doc.createTextNode(String.valueOf(filterIgnorePreprocessCommands)));
         filters.appendChild(ignorePreprocessCommands);
-        
+
         Element ignoreServerCommands = doc.createElement("ignoreServerCommands");
         ignoreServerCommands.appendChild(doc.createTextNode(String.valueOf(filterIgnoreServerCommands)));
         filters.appendChild(ignoreServerCommands);
-        
+
         Element showChatOnly = doc.createElement("showChatOnly");
         showChatOnly.appendChild(doc.createTextNode(String.valueOf(filterShowChatOnly)));
         filters.appendChild(showChatOnly);
-        
+
         Element ignoreWarnings = doc.createElement("ignoreWarnings");
         ignoreWarnings.appendChild(doc.createTextNode(String.valueOf(filterIgnoreWarnings)));
         filters.appendChild(ignoreWarnings);
-        
+
         Element ignoreErrors = doc.createElement("ignoreErrors");
         ignoreErrors.appendChild(doc.createTextNode(String.valueOf(filterIgnoreErrors)));
         filters.appendChild(ignoreErrors);
-        
+
         Element showAdminChatOnly = doc.createElement("showAdminChatOnly");
         showAdminChatOnly.appendChild(doc.createTextNode(String.valueOf(filterShowAdminChatOnly)));
         filters.appendChild(showAdminChatOnly);
-        
+
         Element ignoreAsyncWorldEdit = doc.createElement("ignoreAsyncWorldEdit");
         ignoreAsyncWorldEdit.appendChild(doc.createTextNode(String.valueOf(filterIgnoreAsyncWorldEdit)));
         filters.appendChild(ignoreAsyncWorldEdit);
-        
+
+        Element ignoreGuildChat = doc.createElement("ignoreGuildChat");
+        ignoreGuildChat.appendChild(doc.createTextNode(String.valueOf(filterIgnoreGuildChat)));
+        filters.appendChild(ignoreGuildChat);
+
         return filters;
     }
-    
+
     public void filtersFromXML(Document doc)
     {
         Element filters = (Element)doc.getElementsByTagName("filters").item(0);
@@ -190,6 +195,7 @@ public class BTC_ConfigLoader
         filterIgnoreErrors = Boolean.valueOf(filters.getElementsByTagName("ignoreErrors").item(0).getTextContent());
         filterShowAdminChatOnly = Boolean.valueOf(filters.getElementsByTagName("showAdminChatOnly").item(0).getTextContent());
         filterIgnoreAsyncWorldEdit = Boolean.valueOf(filters.getElementsByTagName("ignoreAsyncWorldEdit").item(0).getTextContent());
+        filterIgnoreGuildChat = Boolean.valueOf(filters.getElementsByTagName("ignoreGuildChat").item(0).getTextContent());
     }
 
     private boolean loadXML(final File file)
@@ -218,7 +224,7 @@ public class BTC_ConfigLoader
                 System.out.println("Error favorite buttons.");
                 hadErrors = true;
             }
-            
+
             loadThemeSettings(doc);
             filtersFromXML(doc);
         }
@@ -231,7 +237,7 @@ public class BTC_ConfigLoader
 
         return hadErrors;
     }
-    
+
     private void loadThemeSettings(Document doc)
     {
         Element theme = (Element)doc.getElementsByTagName("theme").item(0);
@@ -240,6 +246,8 @@ public class BTC_ConfigLoader
         themes.useCustomTheme = Boolean.valueOf(theme.getElementsByTagName("useCustomTheme").item(0).getTextContent());
         themes.darkTheme = Boolean.valueOf(theme.getElementsByTagName("darkTheme").item(0).getTextContent());
         themes.customThemeDarkTheme = Boolean.valueOf(theme.getElementsByTagName("customThemeDarkTheme").item(0).getTextContent());
+        themes.lastSelectedFontSize = Integer.parseInt(theme.getElementsByTagName("lastSelectedFontSize").item(0).getTextContent());
+        themes.lastSelectedFont = theme.getElementsByTagName("lastSelectedFont").item(0).getTextContent();
     }
 
     private static boolean extractFileFromJar(final String resourceName, final String fileName)

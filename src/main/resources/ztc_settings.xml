@@ -236,18 +236,21 @@
     </favoriteButtons>
     <theme>
         <lastSelectedTheme>Light</lastSelectedTheme>
-        <customThemePath></customThemePath>
+        <customThemePath/>
         <useCustomTheme>false</useCustomTheme>
         <darkTheme>false</darkTheme>
         <customThemeDarkTheme>false</customThemeDarkTheme>
+        <lastSelectedFontSize>12</lastSelectedFontSize>
+        <lastSelectedFont>Courier New</lastSelectedFont>
     </theme>
     <filters>
-        <ignorePreprocessCommands>true</ignorePreprocessCommands>
+        <ignorePreprocessCommands>false</ignorePreprocessCommands>
         <ignoreServerCommands>false</ignoreServerCommands>
         <showChatOnly>false</showChatOnly>
         <ignoreWarnings>false</ignoreWarnings>
         <ignoreErrors>false</ignoreErrors>
         <showAdminChatOnly>false</showAdminChatOnly>
         <ignoreAsyncWorldEdit>false</ignoreAsyncWorldEdit>
+        <ignoreGuildChat>false</ignoreGuildChat>
     </filters>
 </configuration>

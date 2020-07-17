@@ -22,23 +22,25 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class Themes {
-    
+
     public HashMap<String, FlatLaf> defaultThemes = new HashMap<>();
     public HashMap<String, String> basicThemes = new HashMap<>();
     public HashMap<String, String> lightThemes = new HashMap<>();
     public HashMap<String, String> darkThemes = new HashMap<>();
     public String lastSelectedTheme = null;
     public String customThemePath = null;
+    public int lastSelectedFontSize = 0;
+    public String lastSelectedFont = null;
     public boolean useCustomTheme = false;
     public boolean darkTheme = false;
     public boolean customThemeDarkTheme = false;
     private DefaultTableModel table;
-    
+
     public void setupThemeMaps()
     {
         defaultThemes.put("Light", new FlatLightLaf());
         defaultThemes.put("Dark", new FlatDarkLaf());
-        
+
         if (SystemInfo.IS_MAC)
         {
             basicThemes.put("Apple", "com.apple.laf.AquaLookAndFeel");
@@ -54,7 +56,7 @@ public class Themes {
         {
             basicThemes.put("Windows", "com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         }
-        
+
         lightThemes.put("Arc", "arc");
         lightThemes.put("Arc Orange", "arc-orange");
         lightThemes.put("Cyan", "cyan");
@@ -65,7 +67,7 @@ public class Themes {
         lightThemes.put("Lighter 2", "material-lighter-contrast");
         lightThemes.put("Solarized", "solarized");
         lightThemes.put("Solarized 2", "solarized-contrast");
-        
+
         darkThemes.put("Arc Dark", "arc-dark");
         darkThemes.put("Arc Dark 2", "arc-dark-contrast");
         darkThemes.put("Atom One", "atom-one");
@@ -93,35 +95,36 @@ public class Themes {
         darkThemes.put("Nord", "nord");
         darkThemes.put("Spacegray", "spacegray");
         darkThemes.put("Vuesion", "vuesion");
+        darkThemes.put("Lyicx", "lyicx");
     }
-    
+
     public void setupThemeTable(JTable themeTable)
     {
         String[] categoryNameList = {"Default", "Basic", "Light", "Dark"};
-        
+
         String[] defaultThemeList = hashMapKeysToSortedStringArray(defaultThemes);
         String[] basicThemeList = hashMapKeysToSortedStringArray(basicThemes);
         String[] lightThemeList = hashMapKeysToSortedStringArray(lightThemes);
         String[] darkThemeList = hashMapKeysToSortedStringArray(darkThemes);
-        
+
         int[] lengths = {defaultThemeList.length, basicThemeList.length, lightThemeList.length, darkThemeList.length};
         int biggestColumnSize = NumberUtils.max(lengths);
-        
+
         String[][] emptyTable = new String[biggestColumnSize][4];
         table = new DefaultTableModel(emptyTable, categoryNameList);
-        
+
         populateColumn(defaultThemeList, 0);
         populateColumn(basicThemeList, 1);
         populateColumn(lightThemeList, 2);
         populateColumn(darkThemeList, 3);
-        
+
         themeTable.setModel(table);
         themeTable.setCellSelectionEnabled(true);
         themeTable.setDefaultEditor(Object.class, null);
         themeTable.getTableHeader().setReorderingAllowed(false);
         themeTable.getTableHeader().setResizingAllowed(false);
     }
-    
+
     private String[] hashMapKeysToSortedStringArray(HashMap<String, ?> hashMap)
     {
         String[] stringList = {};
@@ -129,7 +132,7 @@ public class Themes {
         list = Stream.of(list).sorted().toArray(String[]::new);
         return list;
     }
-    
+
     private void populateColumn(String[] themeList, int column)
     {
         int row = 0;
@@ -139,7 +142,7 @@ public class Themes {
             row++;
         }
     }
-    
+
     public String selectFile()
     {
         JFileChooser fileChooser = newFileChooser();
@@ -152,7 +155,7 @@ public class Themes {
         }
         return null;
     }
-    
+
     public JFileChooser newFileChooser()
     {
         String path = customThemePath;
@@ -173,14 +176,14 @@ public class Themes {
         };
         return fileChooser;
     }
-    
+
     public void applyCustomTheme(boolean save)
     {
         BTC_MainPanel panel = BukkitTelnetClient.mainPanel;
         String path = panel.themeCustomPath.getText();
         panel.setCustomTheme(path, save);
     }
-    
+
     public void selectTheme(JTable themeTable, boolean save)
     {
         BTC_MainPanel panel = BukkitTelnetClient.mainPanel;
@@ -218,13 +221,13 @@ public class Themes {
             panel.setFlatLookAndFeel(darkThemes.get(selectedTheme),true);
             darkTheme = true;
         }
-        
+
         if (save)
         {
             BukkitTelnetClient.config.save();
         }
     }
-    
+
     public String getSelectedTableCell(JTable themeTable)
     {
         int selectedRow = themeTable.getSelectedRow();
@@ -239,7 +242,7 @@ public class Themes {
             return null;
         }
     }
-    
+
     public void loadSettings(JTable themeTable, JTextField customThemePathField)
     {
         customThemePathField.setText(customThemePath);
@@ -254,11 +257,11 @@ public class Themes {
             darkTheme = customThemeDarkTheme;
         }
     }
-    
+
     public void selectLastTheme(JTable themeTable, String lastTheme)
     {
-       for (int row = 0; row < themeTable.getRowCount(); row++)
-       {
+        for (int row = 0; row < themeTable.getRowCount(); row++)
+        {
             for (int column = 0; column < 4; column++)
             {
                 String cellValue = String.valueOf(themeTable.getValueAt(row, column));
@@ -267,36 +270,44 @@ public class Themes {
                     themeTable.changeSelection(row, column, false, false);
                 }
             }
-       }
+        }
     }
-    
+
     public Element toXML(Document doc)
     {
         Element themes = doc.createElement("theme");
-        
+
         Element lastTheme = doc.createElement("lastSelectedTheme");
         lastTheme.appendChild(doc.createTextNode(lastSelectedTheme));
         themes.appendChild(lastTheme);
-        
+
         Element customPath = doc.createElement("customThemePath");
         customPath.appendChild(doc.createTextNode(customThemePath));
         themes.appendChild(customPath);
-        
+
         Element useCustom = doc.createElement("useCustomTheme");
         useCustom.appendChild(doc.createTextNode(String.valueOf(useCustomTheme)));
         themes.appendChild(useCustom);
-        
+
         Element isDarkTheme = doc.createElement("darkTheme");
         isDarkTheme.appendChild(doc.createTextNode(String.valueOf(darkTheme)));
         themes.appendChild(isDarkTheme);
-        
+
         Element isCustomThemeDarkTheme = doc.createElement("customThemeDarkTheme");
         isCustomThemeDarkTheme.appendChild(doc.createTextNode(String.valueOf(customThemeDarkTheme)));
         themes.appendChild(isCustomThemeDarkTheme);
-        
+
+        Element lastFontSize = doc.createElement("lastSelectedFontSize");
+        lastFontSize.appendChild(doc.createTextNode(String.valueOf(lastSelectedFontSize)));
+        themes.appendChild(lastFontSize);
+
+        Element lastFont = doc.createElement("lastSelectedFont");
+        lastFont.appendChild(doc.createTextNode(lastSelectedFont));
+        themes.appendChild(lastFont);
+
         return themes;
     }
-    
+
     public Color checkColor(Color color)
     {
         Color PURPLE = BTC_TelnetMessage.PURPLE;
@@ -305,6 +316,7 @@ public class Themes {
         Color LIGHT_GREEN = new Color(106, 150, 23);
         Color LIGHT_BLUE = new Color(130, 210, 255);
         Color DARK_ORANGE = new Color(255, 147, 5);
+        Color LIGHT_RED = new Color(255, 138, 138);
         if (BukkitTelnetClient.themes.darkTheme)
         {
             if (color == Color.BLACK)
@@ -323,9 +335,9 @@ public class Themes {
             {
                 color = LIGHT_BLUE;
             }
-            else if (color == Color.BLUE)
+            else if (color == Color.RED)
             {
-                color = LIGHT_BLUE;
+                color = LIGHT_RED;
             }
         }
         else
@@ -335,8 +347,8 @@ public class Themes {
                 color = DARK_ORANGE;
             }
         }
-        
-        
+
+
         return color;
     }
 }
