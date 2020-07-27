@@ -736,7 +736,8 @@ public class BTC_MainPanel extends javax.swing.JFrame
         fontSizeSelect = new javax.swing.JTextField();
         fontSizeSet = new javax.swing.JButton();
         fontLabel = new javax.swing.JLabel();
-        fontSelect = new javax.swing.JTextField();
+        fontSelect = new javax.swing.JComboBox<>();
+        //fontSelect = new javax.swing.JTextField();
         fontSet = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1653,8 +1654,8 @@ public class BTC_MainPanel extends javax.swing.JFrame
         fontLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fontLabel.setText("Font");
 
-        fontSelect.setText(font);
-        fontSizeSelect.setText(String.valueOf(fontSize));
+        String fonts[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+        fontSelect.setModel(new javax.swing.DefaultComboBoxModel<>(fonts));
 
         javax.swing.GroupLayout fontPanelLayout = new javax.swing.GroupLayout(fontPanel);
         fontPanel.setLayout(fontPanelLayout);
@@ -1843,16 +1844,16 @@ public class BTC_MainPanel extends javax.swing.JFrame
         themes.selectTheme(themeTable, true);
     }//GEN-LAST:event_themeTableMouseReleased
 
-    private void fontSizeSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fontSizeSetActionPerformed
+    private void fontSizeSetActionPerformed(ActionEvent evt) {//GEN-FIRST:event_fontSizeSetActionPerformed
         this.fontSizeString = fontSizeSelect.getText();
         this.fontSize = Integer.parseInt(fontSizeString);
-        mainOutput.setFont(new java.awt.Font(mainOutput.getFont().getFontName(), 0, fontSize)); // NOI18N
+        mainOutput.setFont(new Font(mainOutput.getFont().getFontName(), 0, fontSize)); // NOI18N
         themes.lastSelectedFontSize = fontSize;
         BukkitTelnetClient.config.save();
     }//GEN-LAST:event_fontSizeSetActionPerformed
 
     private void fontSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fontSetActionPerformed
-        this.font = fontSelect.getText();
+        this.font = fontSelect.getSelectedItem().toString();
         mainOutput.setFont(new java.awt.Font(font, 0, mainOutput.getFont().getSize())); // NOI18N
         themes.lastSelectedFont = font;
         BukkitTelnetClient.config.save();
@@ -2157,7 +2158,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
     public static String fontSizeString;
     public static int fontSize;
     private javax.swing.JLabel fontLabel;
-    private javax.swing.JTextField fontSelect;
+    private javax.swing.JComboBox<String> fontSelect;
     private javax.swing.JButton fontSet;
     public static String font;
     // End of variables declaration//GEN-END:variables
