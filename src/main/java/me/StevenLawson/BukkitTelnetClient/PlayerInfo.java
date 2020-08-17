@@ -41,9 +41,11 @@ public class PlayerInfo
     private final String uuid;
 
     // TFM tags:
+    private final boolean staff;
+    private final boolean mod;
     private final boolean admin;
-    private final boolean telnetAdmin;
-    private final boolean seniorAdmin;
+    /*private final boolean telnetAdmin;
+    private final boolean seniorAdmin;*/
     private final String tag;
     private final String nickName;
 
@@ -77,15 +79,17 @@ public class PlayerInfo
         numColumns = _numColumns;
     }
 
-    public PlayerInfo(String name, String ip, String displayName, String uuid, boolean admin, boolean telnetAdmin, boolean seniorAdmin, String tag, String nickName)
+    public PlayerInfo(String name, String ip, String displayName, String uuid, boolean staff, boolean mod, boolean admin, String tag, String nickName)
     {
         this.name = name;
         this.ip = ip;
         this.displayName = displayName;
         this.uuid = uuid;
+        this.staff = staff;
+        this.mod = mod;
         this.admin = admin;
-        this.telnetAdmin = telnetAdmin;
-        this.seniorAdmin = seniorAdmin;
+        /*this.telnetAdmin = telnetAdmin;
+        this.seniorAdmin = seniorAdmin;*/
         this.tag = tag;
         this.nickName = nickName;
     }
@@ -112,11 +116,19 @@ public class PlayerInfo
         return uuid;
     }
 
+    public boolean isStaff()
+    {
+        return staff;
+    }
+    public boolean isMod()
+    {
+        return mod;
+    }
     public boolean isAdmin()
     {
         return admin;
     }
-
+/*
     public boolean isTelnetAdmin()
     {
         return telnetAdmin;
@@ -126,7 +138,7 @@ public class PlayerInfo
     {
         return seniorAdmin;
     }
-
+*/
     @PlayerTableColumn(name = "Tag", column = 2)
     public String getTag()
     {
@@ -139,22 +151,22 @@ public class PlayerInfo
         return nickName == null || nickName.isEmpty() || nickName.equalsIgnoreCase("null") ? "" : nickName;
     }
 
-    @PlayerTableColumn(name = "Admin Level", column = 4)
-    public String getAdminLevel()
+    @PlayerTableColumn(name = "Staff Level", column = 4)
+    public String getStaffLevel()
     {
-        if (isAdmin())
+        if (isStaff())
         {
-            if (isSeniorAdmin())
+            if (isMod())
             {
-                return "Senior";
+                return "Mod";
             }
-            else if (isTelnetAdmin())
+            else if (isAdmin())
             {
-                return "Telnet";
+                return "Admin";
             }
             else
             {
-                return "Super";
+                return "Trial Mod";
             }
         }
         return "";

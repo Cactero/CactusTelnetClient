@@ -68,7 +68,7 @@ public class BTC_TelnetMessage extends BTC_ConsoleMessage
                     && !isType(BTC_LogMessageType.SAY_MESSAGE)
                     && !isType(BTC_LogMessageType.LEGACY_CHAT_MESSAGE)
                     && !isType(BTC_LogMessageType.DISCORD_CHAT_MESSAGE)
-                    && !isType(BTC_LogMessageType.ADMINSAY_MESSAGE);
+                    && !isType(BTC_LogMessageType.STAFFSAY_MESSAGE);
         }
 
         if (mainPanel.getChkIgnorePreprocessCommands().isSelected() && isType(BTC_LogMessageType.PREPROCESS_COMMAND))
@@ -96,7 +96,7 @@ public class BTC_TelnetMessage extends BTC_ConsoleMessage
             return true;
         }
 
-        if (mainPanel.getChkShowAdminChatOnly().isSelected() && !isType(BTC_LogMessageType.ADMINSAY_MESSAGE))
+        if (mainPanel.getChkShowStaffChatOnly().isSelected() && !isType(BTC_LogMessageType.STAFFSAY_MESSAGE))
         {
             return true;
         }
@@ -140,7 +140,7 @@ public class BTC_TelnetMessage extends BTC_ConsoleMessage
         WARNING_MESSAGE("^:\\[.+? WARN\\]: ", Color.YELLOW),
         ERROR_MESSAGE("^:\\[.+? ERROR\\]: ", Color.RED),
         //
-        ADMINSAY_MESSAGE(PATTERN_PREFIX + "\\[ADMIN\\] ", PURPLE),
+        STAFFSAY_MESSAGE(PATTERN_PREFIX + "\\[STAFF\\] ", PURPLE),
         //
         WORLD_EDIT(PATTERN_PREFIX + "WorldEdit: ", Color.RED),
         ASYNC_WORLD_EDIT(PATTERN_PREFIX + "\\[AsyncWorldEdit\\] "),
