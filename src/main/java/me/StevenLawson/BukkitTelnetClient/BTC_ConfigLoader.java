@@ -43,7 +43,7 @@ public class BTC_ConfigLoader
     public boolean filterShowChatOnly = false;
     public boolean filterIgnoreWarnings = false;
     public boolean filterIgnoreErrors = false;
-    public boolean filterShowAdminChatOnly = false;
+    public boolean filterShowStaffChatOnly = false;
     public boolean filterIgnoreAsyncWorldEdit = false;
     public boolean filterIgnoreGuildChat = false;
 
@@ -170,9 +170,9 @@ public class BTC_ConfigLoader
         ignoreErrors.appendChild(doc.createTextNode(String.valueOf(filterIgnoreErrors)));
         filters.appendChild(ignoreErrors);
 
-        Element showAdminChatOnly = doc.createElement("showAdminChatOnly");
-        showAdminChatOnly.appendChild(doc.createTextNode(String.valueOf(filterShowAdminChatOnly)));
-        filters.appendChild(showAdminChatOnly);
+        Element showStaffChatOnly = doc.createElement("showStaffChatOnly");
+        showStaffChatOnly.appendChild(doc.createTextNode(String.valueOf(filterShowStaffChatOnly)));
+        filters.appendChild(showStaffChatOnly);
 
         Element ignoreAsyncWorldEdit = doc.createElement("ignoreAsyncWorldEdit");
         ignoreAsyncWorldEdit.appendChild(doc.createTextNode(String.valueOf(filterIgnoreAsyncWorldEdit)));
@@ -193,7 +193,7 @@ public class BTC_ConfigLoader
         filterShowChatOnly = Boolean.valueOf(filters.getElementsByTagName("showChatOnly").item(0).getTextContent());
         filterIgnoreWarnings = Boolean.valueOf(filters.getElementsByTagName("ignoreWarnings").item(0).getTextContent());
         filterIgnoreErrors = Boolean.valueOf(filters.getElementsByTagName("ignoreErrors").item(0).getTextContent());
-        filterShowAdminChatOnly = Boolean.valueOf(filters.getElementsByTagName("showAdminChatOnly").item(0).getTextContent());
+        filterShowStaffChatOnly = Boolean.valueOf(filters.getElementsByTagName("showStaffChatOnly").item(0).getTextContent());
         filterIgnoreAsyncWorldEdit = Boolean.valueOf(filters.getElementsByTagName("ignoreAsyncWorldEdit").item(0).getTextContent());
         filterIgnoreGuildChat = Boolean.valueOf(filters.getElementsByTagName("ignoreGuildChat").item(0).getTextContent());
     }

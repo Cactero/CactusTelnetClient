@@ -162,13 +162,12 @@ public class BTC_MainPanel extends javax.swing.JFrame
     public void toggleComponents(boolean enable)
     {
         List<JComponent> components = Arrays.asList(
-                cSayText, sayText, rawsayText, adminChatText, announceText,
-                cSaySend, saySend, rawsaySend, adminChatSend, announceSend,
+                cSayText, sayText, rawsayText, staffChatText, announceText,
+                cSaySend, saySend, rawsaySend, staffChatSend, announceSend,
                 banNameText, banReasonText, unbanNameText, tempbanNameText, tempbanTimeText, tempbanReasonText,
                 banButton, unbanButton, tempbanButton, totalBansButton, purgeBanlistButton, banRollbackToggle,
-                adminListNameText, adminListAdd, adminListRemove, adminListInfo, adminListRank, adminListSetRank, adminListView, adminListClean,
-                adminWorldGuestNameText, adminWorldGuestAdd, adminWorldGuestRemove, adminWorldGuestList, adminWorldGuestPurge,
-                adminWorldTimeSelect, adminWorldGuestRemove, adminWorldTimeSet, adminWorldWeatherSelect, adminWorldWeatherSet
+                staffListNameText, staffListAdd, staffListRemove, staffListInfo, staffListRank, staffListSetRank, staffListView, staffListClean,
+                staffWorldTimeSelect, staffWorldTimeSet, staffWorldWeatherSelect, staffWorldWeatherSet
 
         );
         for (JComponent component : components)
@@ -213,7 +212,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
         chkShowChatOnly.setSelected(BukkitTelnetClient.config.filterShowChatOnly);
         chkIgnoreWarnings.setSelected(BukkitTelnetClient.config.filterIgnoreWarnings);
         chkIgnoreErrors.setSelected(BukkitTelnetClient.config.filterIgnoreErrors);
-        chkShowAdminChatOnly.setSelected(BukkitTelnetClient.config.filterShowAdminChatOnly);
+        chkShowStaffChatOnly.setSelected(BukkitTelnetClient.config.filterShowStaffChatOnly);
         chkIgnoreAsyncWorldEdit.setSelected(BukkitTelnetClient.config.filterIgnoreAsyncWorldEdit);
         chkIgnoreGuildChat.setSelected(BukkitTelnetClient.config.filterIgnoreGuildChat);
 
@@ -649,7 +648,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
         txtNumPlayers = new javax.swing.JTextField();
         filterPanel = new javax.swing.JPanel();
         chkIgnorePreprocessCommands = new javax.swing.JCheckBox();
-        chkShowAdminChatOnly = new javax.swing.JCheckBox();
+        chkShowStaffChatOnly = new javax.swing.JCheckBox();
         chkShowChatOnly = new javax.swing.JCheckBox();
         chkIgnoreErrors = new javax.swing.JCheckBox();
         chkIgnoreServerCommands = new javax.swing.JCheckBox();
@@ -670,9 +669,9 @@ public class BTC_MainPanel extends javax.swing.JFrame
         rawsayLabel = new javax.swing.JLabel();
         rawsayText = new javax.swing.JTextField();
         rawsaySend = new javax.swing.JButton();
-        adminChatLabel = new javax.swing.JLabel();
-        adminChatText = new javax.swing.JTextField();
-        adminChatSend = new javax.swing.JButton();
+        staffChatLabel = new javax.swing.JLabel();
+        staffChatText = new javax.swing.JTextField();
+        staffChatSend = new javax.swing.JButton();
         announceLabel = new javax.swing.JLabel();
         announceText = new javax.swing.JTextField();
         announceSend = new javax.swing.JButton();
@@ -701,29 +700,22 @@ public class BTC_MainPanel extends javax.swing.JFrame
         tempbanSeparator = new javax.swing.JSeparator();
         totalBansButton = new javax.swing.JButton();
         purgeBanlistButton = new javax.swing.JButton();
-        adminListPanel = new javax.swing.JPanel();
-        adminListNameText = new javax.swing.JTextField();
-        adminListNameLabel = new javax.swing.JLabel();
-        adminListAdd = new javax.swing.JButton();
-        adminListRemove = new javax.swing.JButton();
-        adminListInfo = new javax.swing.JButton();
-        adminListRank = new javax.swing.JComboBox<>();
-        adminListSetRank = new javax.swing.JButton();
-        adminListSeparator = new javax.swing.JSeparator();
-        adminListView = new javax.swing.JButton();
-        adminListClean = new javax.swing.JButton();
-        adminWorldPanel = new javax.swing.JPanel();
-        adminWorldGuestNameText = new javax.swing.JTextField();
-        adminWorldGuestNameLabel = new javax.swing.JLabel();
-        adminWorldGuestAdd = new javax.swing.JButton();
-        adminWorldGuestRemove = new javax.swing.JButton();
-        adminWorldGuestSeparator = new javax.swing.JSeparator();
-        adminWorldGuestList = new javax.swing.JButton();
-        adminWorldGuestPurge = new javax.swing.JButton();
-        adminWorldTimeSelect = new javax.swing.JComboBox<>();
-        adminWorldTimeSet = new javax.swing.JButton();
-        adminWorldWeatherSelect = new javax.swing.JComboBox<>();
-        adminWorldWeatherSet = new javax.swing.JButton();
+        staffListPanel = new javax.swing.JPanel();
+        staffListNameText = new javax.swing.JTextField();
+        staffListNameLabel = new javax.swing.JLabel();
+        staffListAdd = new javax.swing.JButton();
+        staffListRemove = new javax.swing.JButton();
+        staffListInfo = new javax.swing.JButton();
+        staffListRank = new javax.swing.JComboBox<>();
+        staffListSetRank = new javax.swing.JButton();
+        staffListSeparator = new javax.swing.JSeparator();
+        staffListView = new javax.swing.JButton();
+        staffListClean = new javax.swing.JButton();
+        staffWorldPanel = new javax.swing.JPanel();
+        staffWorldTimeSelect = new javax.swing.JComboBox<>();
+        staffWorldTimeSet = new javax.swing.JButton();
+        staffWorldWeatherSelect = new javax.swing.JComboBox<>();
+        staffWorldWeatherSet = new javax.swing.JButton();
         themePanel = new javax.swing.JPanel();
         themeScrollPane = new javax.swing.JScrollPane();
         themeTable = new javax.swing.JTable();
@@ -911,10 +903,10 @@ public class BTC_MainPanel extends javax.swing.JFrame
             }
         });
 
-        chkShowAdminChatOnly.setText("Show admin chat only");
-        chkShowAdminChatOnly.addActionListener(new java.awt.event.ActionListener() {
+        chkShowStaffChatOnly.setText("Show staff chat only");
+        chkShowStaffChatOnly.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkShowAdminChatOnlyActionPerformed(evt);
+                chkShowStaffChatOnlyActionPerformed(evt);
             }
         });
 
@@ -968,7 +960,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                 .addContainerGap()
                                 .addGroup(filterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(chkIgnorePreprocessCommands)
-                                        .addComponent(chkShowAdminChatOnly)
+                                        .addComponent(chkShowStaffChatOnly)
                                         .addComponent(chkShowChatOnly)
                                         .addComponent(chkIgnoreErrors)
                                         .addComponent(chkIgnoreServerCommands)
@@ -991,7 +983,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(chkIgnoreErrors, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkShowAdminChatOnly, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(chkShowStaffChatOnly, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(chkIgnoreAsyncWorldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1068,14 +1060,14 @@ public class BTC_MainPanel extends javax.swing.JFrame
             }
         });
 
-        adminChatLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminChatLabel.setText("Admin Chat");
-        adminChatLabel.setAlignmentY(0.0F);
+        staffChatLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        staffChatLabel.setText("Staff Chat");
+        staffChatLabel.setAlignmentY(0.0F);
 
-        adminChatSend.setText("Send");
-        adminChatSend.addActionListener(new java.awt.event.ActionListener() {
+        staffChatSend.setText("Send");
+        staffChatSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminChatSendActionPerformed(evt);
+                staffChatSendActionPerformed(evt);
             }
         });
 
@@ -1099,7 +1091,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                 .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(rawsayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(cSayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(adminChatLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                                        .addComponent(staffChatLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
                                         .addComponent(announceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(sayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1113,9 +1105,9 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(saySend))
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, chatPanelLayout.createSequentialGroup()
-                                                .addComponent(adminChatText)
+                                                .addComponent(staffChatText)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(adminChatSend))
+                                                .addComponent(staffChatSend))
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, chatPanelLayout.createSequentialGroup()
                                                 .addComponent(rawsayText)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1146,9 +1138,9 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                         .addComponent(rawsaySend))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(adminChatText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(adminChatLabel)
-                                        .addComponent(adminChatSend))
+                                        .addComponent(staffChatText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(staffChatLabel)
+                                        .addComponent(staffChatSend))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1333,222 +1325,170 @@ public class BTC_MainPanel extends javax.swing.JFrame
 
         sidebarPane.addTab("Ban List", banListPanel);
 
-        adminListNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminListNameLabel.setText("Name");
+        staffListNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        staffListNameLabel.setText("Name");
 
-        adminListAdd.setText("Add");
-        adminListAdd.addActionListener(new java.awt.event.ActionListener() {
+        staffListAdd.setText("Add");
+        staffListAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminListAddActionPerformed(evt);
+                staffListAddActionPerformed(evt);
             }
         });
 
-        adminListRemove.setText("Remove");
-        adminListRemove.addActionListener(new java.awt.event.ActionListener() {
+        staffListRemove.setText("Remove");
+        staffListRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminListRemoveActionPerformed(evt);
+                staffListRemoveActionPerformed(evt);
             }
         });
 
-        adminListInfo.setText("Info");
-        adminListInfo.addActionListener(new java.awt.event.ActionListener() {
+        staffListInfo.setText("Info");
+        staffListInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminListInfoActionPerformed(evt);
+                staffListInfoActionPerformed(evt);
             }
         });
 
-        adminListRank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Super Admin", "Telnet Admin", "Senior Admin"}));
+        staffListRank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Trial Mod", "Mod", "Admin"}));
 
-        adminListSetRank.setText("Set Rank");
-        adminListSetRank.addActionListener(new java.awt.event.ActionListener() {
+        staffListSetRank.setText("Set Rank");
+        staffListSetRank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminListSetRankActionPerformed(evt);
+                staffListSetRankActionPerformed(evt);
             }
         });
 
-        adminListView.setText("List");
-        adminListView.addActionListener(new java.awt.event.ActionListener() {
+        staffListView.setText("List");
+        staffListView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminListViewActionPerformed(evt);
+                staffListViewActionPerformed(evt);
             }
         });
 
-        adminListClean.setText("Clean");
-        adminListClean.addActionListener(new java.awt.event.ActionListener() {
+        staffListClean.setText("Clean");
+        staffListClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminListCleanActionPerformed(evt);
+                staffListCleanActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout adminListPanelLayout = new javax.swing.GroupLayout(adminListPanel);
-        adminListPanel.setLayout(adminListPanelLayout);
-        adminListPanelLayout.setHorizontalGroup(
-                adminListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(adminListPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout staffListPanelLayout = new javax.swing.GroupLayout(staffListPanel);
+        staffListPanel.setLayout(staffListPanelLayout);
+        staffListPanelLayout.setHorizontalGroup(
+                staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(staffListPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(adminListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(adminListPanelLayout.createSequentialGroup()
-                                                .addGroup(adminListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(adminListNameText)
-                                                        .addComponent(adminListNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(adminListSeparator))
+                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(staffListPanelLayout.createSequentialGroup()
+                                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(staffListNameText)
+                                                        .addComponent(staffListNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(staffListSeparator))
                                                 .addContainerGap())
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminListPanelLayout.createSequentialGroup()
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffListPanelLayout.createSequentialGroup()
                                                 .addGap(75, 75, 75)
-                                                .addComponent(adminListView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(staffListView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(adminListClean, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(staffListClean, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGap(74, 74, 74))
-                                        .addGroup(adminListPanelLayout.createSequentialGroup()
+                                        .addGroup(staffListPanelLayout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                                                .addGroup(adminListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addGroup(adminListPanelLayout.createSequentialGroup()
-                                                                .addComponent(adminListRank, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(staffListPanelLayout.createSequentialGroup()
+                                                                .addComponent(staffListRank, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .addComponent(adminListSetRank, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(adminListPanelLayout.createSequentialGroup()
-                                                                .addComponent(adminListAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(staffListSetRank, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(staffListPanelLayout.createSequentialGroup()
+                                                                .addComponent(staffListAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(adminListRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(staffListRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(adminListInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addComponent(staffListInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addContainerGap(47, Short.MAX_VALUE))))
         );
-        adminListPanelLayout.setVerticalGroup(
-                adminListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(adminListPanelLayout.createSequentialGroup()
+        staffListPanelLayout.setVerticalGroup(
+                staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(staffListPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(adminListNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(staffListNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(adminListNameLabel)
+                                .addComponent(staffListNameLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(adminListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                        .addComponent(adminListAdd)
-                                        .addComponent(adminListRemove)
-                                        .addComponent(adminListInfo))
+                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                        .addComponent(staffListAdd)
+                                        .addComponent(staffListRemove)
+                                        .addComponent(staffListInfo))
                                 .addGap(18, 18, 18)
-                                .addGroup(adminListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(adminListRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(adminListSetRank))
+                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(staffListRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(staffListSetRank))
                                 .addGap(18, 18, 18)
-                                .addComponent(adminListSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(staffListSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(adminListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(adminListClean)
-                                        .addComponent(adminListView))
+                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(staffListClean)
+                                        .addComponent(staffListView))
                                 .addGap(393, 393, 393))
         );
 
-        sidebarPane.addTab("Admin List", adminListPanel);
+        sidebarPane.addTab("Staff List", staffListPanel);
 
-        adminWorldGuestNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminWorldGuestNameLabel.setText("Guest Name");
+        staffWorldTimeSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Morning", "Noon", "Evening", "Night"}));
 
-        adminWorldGuestAdd.setText("Add");
-        adminWorldGuestAdd.addActionListener(new java.awt.event.ActionListener() {
+        staffWorldTimeSet.setText("Set Time");
+        staffWorldTimeSet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminWorldGuestAddActionPerformed(evt);
+                staffWorldTimeSetActionPerformed(evt);
             }
         });
 
-        adminWorldGuestRemove.setText("Remove");
-        adminWorldGuestRemove.addActionListener(new java.awt.event.ActionListener() {
+        staffWorldWeatherSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Off", "Rain", "Storm"}));
+
+        staffWorldWeatherSet.setText("Set Weather");
+        staffWorldWeatherSet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminWorldGuestRemoveActionPerformed(evt);
+                staffWorldWeatherSetActionPerformed(evt);
             }
         });
 
-        adminWorldGuestList.setText("Guest List");
-        adminWorldGuestList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminWorldGuestListActionPerformed(evt);
-            }
-        });
-
-        adminWorldGuestPurge.setText("Guest Purge");
-        adminWorldGuestPurge.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminWorldGuestPurgeActionPerformed(evt);
-            }
-        });
-
-        adminWorldTimeSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Morning", "Noon", "Evening", "Night"}));
-
-        adminWorldTimeSet.setText("Set Time");
-        adminWorldTimeSet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminWorldTimeSetActionPerformed(evt);
-            }
-        });
-
-        adminWorldWeatherSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Off", "Rain", "Storm"}));
-
-        adminWorldWeatherSet.setText("Set Weather");
-        adminWorldWeatherSet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminWorldWeatherSetActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout adminWorldPanelLayout = new javax.swing.GroupLayout(adminWorldPanel);
-        adminWorldPanel.setLayout(adminWorldPanelLayout);
-        adminWorldPanelLayout.setHorizontalGroup(
-                adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(adminWorldPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout staffWorldPanelLayout = new javax.swing.GroupLayout(staffWorldPanel);
+        staffWorldPanel.setLayout(staffWorldPanelLayout);
+        staffWorldPanelLayout.setHorizontalGroup(
+                staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(staffWorldPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(adminWorldGuestSeparator)
-                                        .addComponent(adminWorldGuestNameText)
-                                        .addComponent(adminWorldGuestNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(adminWorldPanelLayout.createSequentialGroup()
+                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(staffWorldPanelLayout.createSequentialGroup()
                                                 .addGap(0, 0, Short.MAX_VALUE)
-                                                .addGroup(adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(adminWorldPanelLayout.createSequentialGroup()
-                                                                .addComponent(adminWorldGuestAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(staffWorldPanelLayout.createSequentialGroup()
+                                                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(staffWorldTimeSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(staffWorldWeatherSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(adminWorldGuestRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(adminWorldPanelLayout.createSequentialGroup()
-                                                                .addGroup(adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(adminWorldTimeSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(adminWorldWeatherSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(adminWorldGuestList, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(adminWorldTimeSet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(adminWorldWeatherSet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(adminWorldGuestPurge, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(staffWorldTimeSet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(staffWorldWeatherSet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap())
         );
-        adminWorldPanelLayout.setVerticalGroup(
-                adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(adminWorldPanelLayout.createSequentialGroup()
+        staffWorldPanelLayout.setVerticalGroup(
+                staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(staffWorldPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(adminWorldGuestNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(adminWorldGuestNameLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(adminWorldGuestAdd)
-                                        .addComponent(adminWorldGuestRemove))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(adminWorldGuestSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(adminWorldGuestList)
-                                        .addComponent(adminWorldGuestPurge))
+                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(staffWorldTimeSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(staffWorldTimeSet))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(adminWorldTimeSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(adminWorldTimeSet))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(adminWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(adminWorldWeatherSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(adminWorldWeatherSet))
+                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(staffWorldWeatherSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(staffWorldWeatherSet))
                                 .addContainerGap(429, Short.MAX_VALUE))
         );
 
-        sidebarPane.addTab("Admin World", adminWorldPanel);
+        sidebarPane.addTab("Staff World", staffWorldPanel);
 
         themeTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
@@ -1763,52 +1703,52 @@ public class BTC_MainPanel extends javax.swing.JFrame
         mainOutput.setText("");
     }//GEN-LAST:event_clearLogsActionPerformed
 
-    private void adminListCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminListCleanActionPerformed
-        getConnectionManager().sendCommand("saconfig clean");
-    }//GEN-LAST:event_adminListCleanActionPerformed
+    private void staffListCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffListCleanActionPerformed
+        getConnectionManager().sendCommand("slconfig clean");
+    }//GEN-LAST:event_staffListCleanActionPerformed
 
-    private void adminListViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminListViewActionPerformed
-        getConnectionManager().sendCommand("saconfig list");
-    }//GEN-LAST:event_adminListViewActionPerformed
+    private void staffListViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffListViewActionPerformed
+        getConnectionManager().sendCommand("slconfig list");
+    }//GEN-LAST:event_staffListViewActionPerformed
 
-    private void adminListSetRankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminListSetRankActionPerformed
-        String name = adminListNameText.getText();
+    private void staffListSetRankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffListSetRankActionPerformed
+        String name = staffListNameText.getText();
         if (name.isEmpty())
         {
             return;
         }
 
-        String rank = adminListRank.getSelectedItem().toString().toLowerCase().replace(" ", "_");
+        String rank = staffListRank.getSelectedItem().toString().toLowerCase().replace(" ", "_");
 
-        getConnectionManager().sendCommand("saconfig setrank " + rank + " " + name);
-    }//GEN-LAST:event_adminListSetRankActionPerformed
+        getConnectionManager().sendCommand("slconfig setrank " + name + " " + rank);
+    }//GEN-LAST:event_staffListSetRankActionPerformed
 
-    private void adminListInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminListInfoActionPerformed
-        String name = adminListNameText.getText();
+    private void staffListInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffListInfoActionPerformed
+        String name = staffListNameText.getText();
         if (name.isEmpty())
         {
             return;
         }
-        getConnectionManager().sendCommand("saconfig info " + name);
-    }//GEN-LAST:event_adminListInfoActionPerformed
+        getConnectionManager().sendCommand("slconfig info " + name);
+    }//GEN-LAST:event_staffListInfoActionPerformed
 
-    private void adminListRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminListRemoveActionPerformed
-        String name = adminListNameText.getText();
+    private void staffListRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffListRemoveActionPerformed
+        String name = staffListNameText.getText();
         if (name.isEmpty())
         {
             return;
         }
-        getConnectionManager().sendCommand("saconfig remove " + name);
-    }//GEN-LAST:event_adminListRemoveActionPerformed
+        getConnectionManager().sendCommand("slconfig remove " + name);
+    }//GEN-LAST:event_staffListRemoveActionPerformed
 
-    private void adminListAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminListAddActionPerformed
-        String name = adminListNameText.getText();
+    private void staffListAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffListAddActionPerformed
+        String name = staffListNameText.getText();
         if (name.isEmpty())
         {
             return;
         }
-        getConnectionManager().sendCommand("saconfig add " + name);
-    }//GEN-LAST:event_adminListAddActionPerformed
+        getConnectionManager().sendCommand("slconfig add " + name);
+    }//GEN-LAST:event_staffListAddActionPerformed
 
     private void themeCustomDarkThemeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themeCustomDarkThemeActionPerformed
         if (themes.useCustomTheme)
@@ -1860,48 +1800,17 @@ public class BTC_MainPanel extends javax.swing.JFrame
     }//GEN-LAST:event_fontSetActionPerformed
 
 
-    private void adminWorldWeatherSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminWorldWeatherSetActionPerformed
-        String weather = adminWorldWeatherSelect.getSelectedItem().toString().toLowerCase();
+    private void staffWorldWeatherSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffWorldWeatherSetActionPerformed
+        String weather = staffWorldWeatherSelect.getSelectedItem().toString().toLowerCase();
 
-        getConnectionManager().sendCommand("adminworld weather " + weather);
-    }//GEN-LAST:event_adminWorldWeatherSetActionPerformed
+        getConnectionManager().sendCommand("staffworld weather " + weather);
+    }//GEN-LAST:event_staffWorldWeatherSetActionPerformed
 
-    private void adminWorldTimeSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminWorldTimeSetActionPerformed
-        String time = adminWorldTimeSelect.getSelectedItem().toString().toLowerCase();
+    private void staffWorldTimeSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffWorldTimeSetActionPerformed
+        String time = staffWorldTimeSelect.getSelectedItem().toString().toLowerCase();
 
-        getConnectionManager().sendCommand("adminworld time " + time);
-    }//GEN-LAST:event_adminWorldTimeSetActionPerformed
-
-    private void adminWorldGuestPurgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminWorldGuestPurgeActionPerformed
-        if (JOptionPane.showConfirmDialog(this, "Are you sure you want to purge the guest list?", "Purge Guest List?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
-        {
-            getConnectionManager().sendCommand("adminworld guest purge");
-        }
-    }//GEN-LAST:event_adminWorldGuestPurgeActionPerformed
-
-    private void adminWorldGuestListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminWorldGuestListActionPerformed
-        getConnectionManager().sendCommand("adminworld guest list");
-    }//GEN-LAST:event_adminWorldGuestListActionPerformed
-
-    private void adminWorldGuestRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminWorldGuestRemoveActionPerformed
-        String name = adminWorldGuestNameText.getText();
-        if (name.isEmpty())
-        {
-            return;
-        }
-
-        getConnectionManager().sendCommand("adminworld guest remove " + name);
-    }//GEN-LAST:event_adminWorldGuestRemoveActionPerformed
-
-    private void adminWorldGuestAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminWorldGuestAddActionPerformed
-        String name = adminWorldGuestNameText.getText();
-        if (name.isEmpty())
-        {
-            return;
-        }
-
-        getConnectionManager().sendCommand("adminworld guest add " + name);
-    }//GEN-LAST:event_adminWorldGuestAddActionPerformed
+        getConnectionManager().sendCommand("staffworld time " + time);
+    }//GEN-LAST:event_staffWorldTimeSetActionPerformed
 
     private void purgeBanlistButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purgeBanlistButtonActionPerformed
         if (JOptionPane.showConfirmDialog(this, "Are you sure you want to purge the ban list?", "Purge Ban List?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
@@ -1973,13 +1882,13 @@ public class BTC_MainPanel extends javax.swing.JFrame
         }
     }//GEN-LAST:event_announceSendActionPerformed
 
-    private void adminChatSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminChatSendActionPerformed
-        String message = adminChatText.getText();
+    private void staffChatSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffChatSendActionPerformed
+        String message = staffChatText.getText();
         if (!message.isEmpty())
         {
             getConnectionManager().sendCommand("o " + message);
         }
-    }//GEN-LAST:event_adminChatSendActionPerformed
+    }//GEN-LAST:event_staffChatSendActionPerformed
 
     private void rawsaySendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rawsaySendActionPerformed
         String message = rawsayText.getText();
@@ -2030,10 +1939,10 @@ public class BTC_MainPanel extends javax.swing.JFrame
         BukkitTelnetClient.config.save();
     }//GEN-LAST:event_chkIgnoreErrorsActionPerformed
 
-    private void chkShowAdminChatOnlyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkShowAdminChatOnlyActionPerformed
-        BukkitTelnetClient.config.filterShowAdminChatOnly = chkShowAdminChatOnly.isSelected();
+    private void chkShowStaffChatOnlyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkShowStaffChatOnlyActionPerformed
+        BukkitTelnetClient.config.filterShowStaffChatOnly = chkShowStaffChatOnly.isSelected();
         BukkitTelnetClient.config.save();
-    }//GEN-LAST:event_chkShowAdminChatOnlyActionPerformed
+    }//GEN-LAST:event_chkShowStaffChatOnlyActionPerformed
 
     private void chkIgnoreAsyncWorldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkIgnoreAsyncWorldEditActionPerformed
         BukkitTelnetClient.config.filterIgnoreAsyncWorldEdit = chkIgnoreAsyncWorldEdit.isSelected();
@@ -2046,32 +1955,25 @@ public class BTC_MainPanel extends javax.swing.JFrame
     }//GEN-LAST:event_chkIgnoreGuildChatActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel adminChatLabel;
-    private javax.swing.JButton adminChatSend;
-    private javax.swing.JTextField adminChatText;
-    private javax.swing.JButton adminListAdd;
-    private javax.swing.JButton adminListClean;
-    private javax.swing.JButton adminListInfo;
-    private javax.swing.JLabel adminListNameLabel;
-    private javax.swing.JTextField adminListNameText;
-    private javax.swing.JPanel adminListPanel;
-    private javax.swing.JComboBox<String> adminListRank;
-    private javax.swing.JButton adminListRemove;
-    private javax.swing.JSeparator adminListSeparator;
-    private javax.swing.JButton adminListSetRank;
-    private javax.swing.JButton adminListView;
-    private javax.swing.JButton adminWorldGuestAdd;
-    private javax.swing.JButton adminWorldGuestList;
-    private javax.swing.JLabel adminWorldGuestNameLabel;
-    private javax.swing.JTextField adminWorldGuestNameText;
-    private javax.swing.JButton adminWorldGuestPurge;
-    private javax.swing.JButton adminWorldGuestRemove;
-    private javax.swing.JSeparator adminWorldGuestSeparator;
-    private javax.swing.JPanel adminWorldPanel;
-    private javax.swing.JComboBox<String> adminWorldTimeSelect;
-    private javax.swing.JButton adminWorldTimeSet;
-    private javax.swing.JComboBox<String> adminWorldWeatherSelect;
-    private javax.swing.JButton adminWorldWeatherSet;
+    private javax.swing.JLabel staffChatLabel;
+    private javax.swing.JButton staffChatSend;
+    private javax.swing.JTextField staffChatText;
+    private javax.swing.JButton staffListAdd;
+    private javax.swing.JButton staffListClean;
+    private javax.swing.JButton staffListInfo;
+    private javax.swing.JLabel staffListNameLabel;
+    private javax.swing.JTextField staffListNameText;
+    private javax.swing.JPanel staffListPanel;
+    private javax.swing.JComboBox<String> staffListRank;
+    private javax.swing.JButton staffListRemove;
+    private javax.swing.JSeparator staffListSeparator;
+    private javax.swing.JButton staffListSetRank;
+    private javax.swing.JButton staffListView;
+    private javax.swing.JPanel staffWorldPanel;
+    private javax.swing.JComboBox<String> staffWorldTimeSelect;
+    private javax.swing.JButton staffWorldTimeSet;
+    private javax.swing.JComboBox<String> staffWorldWeatherSelect;
+    private javax.swing.JButton staffWorldWeatherSet;
     private javax.swing.JLabel announceLabel;
     private javax.swing.JButton announceSend;
     private javax.swing.JTextField announceText;
@@ -2097,7 +1999,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
     private javax.swing.JCheckBox chkIgnorePreprocessCommands;
     private javax.swing.JCheckBox chkIgnoreServerCommands;
     private javax.swing.JCheckBox chkIgnoreWarnings;
-    private javax.swing.JCheckBox chkShowAdminChatOnly;
+    private javax.swing.JCheckBox chkShowStaffChatOnly;
     private javax.swing.JCheckBox chkShowChatOnly;
     private javax.swing.JCheckBox chkIgnoreGuildChat;
     private javax.swing.JButton clearLogs;
@@ -2223,9 +2125,9 @@ public class BTC_MainPanel extends javax.swing.JFrame
         return chkIgnoreErrors;
     }
 
-    public JCheckBox getChkShowAdminChatOnly()
+    public JCheckBox getChkShowStaffChatOnly()
     {
-        return chkShowAdminChatOnly;
+        return chkShowStaffChatOnly;
     }
 
     public JCheckBox getChkIgnoreAsyncWorldEdit()

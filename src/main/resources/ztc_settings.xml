@@ -98,12 +98,12 @@
             <label>Deop All</label>
         </favoriteButton>
         <favoriteButton>
-            <command>adminmode on</command>
-            <label>Adminmode ON</label>
+            <command>staffmode on</command>
+            <label>Staffmode ON</label>
         </favoriteButton>
         <favoriteButton>
-            <command>adminmode off</command>
-            <label>Adminmode OFF</label>
+            <command>staffmode off</command>
+            <label>Staffmode OFF</label>
         </favoriteButton>
         <favoriteButton>
             <command>cake</command>
@@ -249,7 +249,7 @@
         <showChatOnly>false</showChatOnly>
         <ignoreWarnings>false</ignoreWarnings>
         <ignoreErrors>false</ignoreErrors>
-        <showAdminChatOnly>false</showAdminChatOnly>
+        <showStaffChatOnly>false</showStaffChatOnly>
         <ignoreAsyncWorldEdit>false</ignoreAsyncWorldEdit>
         <ignoreGuildChat>false</ignoreGuildChat>
     </filters>
