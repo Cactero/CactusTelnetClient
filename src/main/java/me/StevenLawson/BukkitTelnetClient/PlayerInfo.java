@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2012-2017 Steven Lawson
  *
  * This file is part of FreedomTelnetClient.
@@ -44,8 +44,6 @@ public class PlayerInfo
     private final boolean staff;
     private final boolean mod;
     private final boolean admin;
-    /*private final boolean telnetAdmin;
-    private final boolean seniorAdmin;*/
     private final String tag;
     private final String nickName;
 
@@ -88,8 +86,6 @@ public class PlayerInfo
         this.staff = staff;
         this.mod = mod;
         this.admin = admin;
-        /*this.telnetAdmin = telnetAdmin;
-        this.seniorAdmin = seniorAdmin;*/
         this.tag = tag;
         this.nickName = nickName;
     }
@@ -120,25 +116,17 @@ public class PlayerInfo
     {
         return staff;
     }
+
     public boolean isMod()
     {
         return mod;
     }
+
     public boolean isAdmin()
     {
         return admin;
     }
-/*
-    public boolean isTelnetAdmin()
-    {
-        return telnetAdmin;
-    }
 
-    public boolean isSeniorAdmin()
-    {
-        return seniorAdmin;
-    }
-*/
     @PlayerTableColumn(name = "Tag", column = 2)
     public String getTag()
     {
@@ -156,13 +144,13 @@ public class PlayerInfo
     {
         if (isStaff())
         {
-            if (isMod())
-            {
-                return "Mod";
-            }
-            else if (isAdmin())
+            if (isAdmin())
             {
                 return "Admin";
+            }
+            else if (isMod())
+            {
+                return "Mod";
             }
             else
             {
