@@ -196,7 +196,7 @@ public class BTC_ConfigLoader
         filterShowStaffChatOnly = Boolean.valueOf(filters.getElementsByTagName("showStaffChatOnly").item(0).getTextContent());
         filterIgnoreAsyncWorldEdit = Boolean.valueOf(filters.getElementsByTagName("ignoreAsyncWorldEdit").item(0).getTextContent());
         filterIgnoreGuildChat = Boolean.valueOf(filters.getElementsByTagName("ignoreGuildChat").item(0).getTextContent());
-    }
+    }   
 
     private boolean loadXML(final File file)
     {

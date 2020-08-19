@@ -167,9 +167,9 @@ public class BTC_MainPanel extends javax.swing.JFrame
                 banNameText, banReasonText, unbanNameText, tempbanNameText, tempbanTimeText, tempbanReasonText,
                 banButton, unbanButton, tempbanButton, totalBansButton, purgeBanlistButton, banRollbackToggle,
                 staffListNameText, staffListAdd, staffListRemove, staffListInfo, staffListRank, staffListSetRank, staffListView, staffListClean,
-                staffWorldTimeSelect, staffWorldTimeSet, staffWorldWeatherSelect, staffWorldWeatherSet
-
-        );
+                staffWorldTimeSelect, staffWorldTimeSet, staffWorldWeatherSelect, staffWorldWeatherSet, namebanNameText, namebanReasonText,
+                namebanButton, unbannameButton, unbannameNameText, banQuietToggle, namebanQuietToggle, tempbanQuietToggle, unbanRestoreToggle, unbannameQuietToggle
+                );
         for (JComponent component : components)
         {
             component.setEnabled(enable);
@@ -683,11 +683,27 @@ public class BTC_MainPanel extends javax.swing.JFrame
         banNameLabel = new javax.swing.JLabel();
         banReasonLabel = new javax.swing.JLabel();
         banRollbackToggle = new javax.swing.JCheckBox();
+        banQuietToggle = new javax.swing.JCheckBox();
         banSeparator = new javax.swing.JSeparator();
+        namebanLabel = new javax.swing.JLabel();
+        namebanNameText = new javax.swing.JTextField();
+        namebanReasonText = new javax.swing.JTextField();
+        namebanButton = new javax.swing.JButton();
+        namebanNameLabel = new javax.swing.JLabel();
+        namebanReasonLabel = new javax.swing.JLabel();
+        namebanQuietToggle = new javax.swing.JCheckBox();
+        namebanSeparator = new javax.swing.JSeparator();
+        unbannameLabel = new javax.swing.JLabel();
+        unbannameNameText = new javax.swing.JTextField();
+        unbannameButton = new javax.swing.JButton();
+        unbannameNameLabel = new javax.swing.JLabel();
+        unbannameQuietToggle = new javax.swing.JCheckBox();
+        unbannameSeparator = new javax.swing.JSeparator();
         unbanLabel = new javax.swing.JLabel();
         unbanNameText = new javax.swing.JTextField();
         unbanButton = new javax.swing.JButton();
         unbanNameLabel = new javax.swing.JLabel();
+        unbanRestoreToggle = new javax.swing.JCheckBox();
         unbanSeparator = new javax.swing.JSeparator();
         tempbanLabel = new javax.swing.JLabel();
         tempbanNameText = new javax.swing.JTextField();
@@ -697,6 +713,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
         tempbanNameLabel = new javax.swing.JLabel();
         tempbanTimeLabel = new javax.swing.JLabel();
         tempbanReasonLabel = new javax.swing.JLabel();
+        tempbanQuietToggle = new javax.swing.JCheckBox();
         tempbanSeparator = new javax.swing.JSeparator();
         totalBansButton = new javax.swing.JButton();
         purgeBanlistButton = new javax.swing.JButton();
@@ -729,7 +746,6 @@ public class BTC_MainPanel extends javax.swing.JFrame
         fontSizeSet = new javax.swing.JButton();
         fontLabel = new javax.swing.JLabel();
         fontSelect = new javax.swing.JComboBox<>();
-        //fontSelect = new javax.swing.JTextField();
         fontSet = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1172,8 +1188,36 @@ public class BTC_MainPanel extends javax.swing.JFrame
         banRollbackToggle.setText("RB");
         banRollbackToggle.setToolTipText("Rollback player");
 
+        banQuietToggle.setSelected(false);
+        banQuietToggle.setText("Q");
+        banQuietToggle.setToolTipText("Quiet");
+
+        namebanLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        namebanLabel.setText("Ban Name/IP");
+
+        namebanButton.setText("Ban");
+        namebanButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namebanButtonActionPerformed(evt);
+            }
+        });
+
+        namebanNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        namebanNameLabel.setText("Name/IP");
+
+        namebanReasonLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        namebanReasonLabel.setText("Reason");
+        
+        namebanQuietToggle.setSelected(false);
+        namebanQuietToggle.setText("Q");
+        namebanQuietToggle.setToolTipText("Quiet");
+
         unbanLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         unbanLabel.setText("Unban Player");
+
+        unbanRestoreToggle.setSelected(false);
+        unbanRestoreToggle.setText("R");
+        unbanRestoreToggle.setToolTipText("Restore");
 
         unbanButton.setText("Unban");
         unbanButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1184,6 +1228,23 @@ public class BTC_MainPanel extends javax.swing.JFrame
 
         unbanNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         unbanNameLabel.setText("Name");
+
+        unbannameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        unbannameLabel.setText("Unban Name/IP");
+
+        unbannameNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        unbannameNameLabel.setText("Name/IP");
+
+        unbannameQuietToggle.setSelected(false);
+        unbannameQuietToggle.setText("Q");
+        unbannameQuietToggle.setToolTipText("Quiet");
+
+        unbannameButton.setText("Unban");
+        unbannameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unbannameButtonActionPerformed(evt);
+            }
+        });
 
         tempbanLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tempbanLabel.setText("Temp Ban Player");
@@ -1206,6 +1267,10 @@ public class BTC_MainPanel extends javax.swing.JFrame
 
         tempbanReasonLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tempbanReasonLabel.setText("Reason");
+
+        tempbanQuietToggle.setSelected(false);
+        tempbanQuietToggle.setText("Q");
+        tempbanQuietToggle.setToolTipText("Quiet");
 
         totalBansButton.setText("Total Bans");
         totalBansButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1238,26 +1303,36 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(banListPanelLayout.createSequentialGroup()
                                                                 .addComponent(banReasonText)
-                                                                .addGap(2, 2, 2))
+                                                                .addGap(5, 5, 5))
                                                         .addComponent(banReasonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(banButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(banRollbackToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(banButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addComponent(unbanSeparator)
-                                        .addComponent(unbanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(banRollbackToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(banQuietToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                        .addComponent(namebanSeparator)
+                                        .addComponent(namebanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(banListPanelLayout.createSequentialGroup()
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(unbanNameText)
-                                                        .addComponent(unbanNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(namebanNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                                                        .addComponent(namebanNameText))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(unbanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(banListPanelLayout.createSequentialGroup()
+                                                                .addComponent(namebanReasonText)
+                                                                .addGap(2, 2, 2))
+                                                        .addComponent(namebanReasonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(namebanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(namebanQuietToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                                         .addComponent(tempbanSeparator)
                                         .addComponent(tempbanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(banListPanelLayout.createSequentialGroup()
                                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(tempbanNameText)
-                                                        .addComponent(tempbanNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                                                        .addComponent(tempbanNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(tempbanTimeText)
@@ -1267,11 +1342,37 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                                         .addComponent(tempbanReasonText)
                                                         .addComponent(tempbanReasonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(tempbanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(tempbanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(tempbanQuietToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                        .addComponent(unbanSeparator)
+                                        .addComponent(unbanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(banListPanelLayout.createSequentialGroup()
+                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(unbanNameText)
+                                                        .addComponent(unbanNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(unbanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(unbanRestoreToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                        .addComponent(unbannameSeparator)
+                                        .addComponent(unbannameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(banListPanelLayout.createSequentialGroup()
+                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(unbannameNameText)
+                                                        .addComponent(unbannameNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(unbannameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(unbannameQuietToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                                         .addGroup(banListPanelLayout.createSequentialGroup()
                                                 .addComponent(totalBansButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(purgeBanlistButton)))
+                                                .addComponent(purgeBanlistButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGap(5, 5, 5)))
                                 .addContainerGap())
         );
         banListPanelLayout.setVerticalGroup(
@@ -1283,44 +1384,71 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(banNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(banReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(banButton))
+                                        .addComponent(banButton)
+                                        .addComponent(banRollbackToggle))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(banNameLabel)
                                         .addComponent(banReasonLabel)
-                                        .addComponent(banRollbackToggle))
+                                        .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(banQuietToggle)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(banSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(unbanLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(namebanLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(unbanNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(unbanButton))
+                                        .addComponent(namebanNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(namebanReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(namebanButton)
+                                        .addComponent(namebanQuietToggle))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(unbanNameLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(unbanSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(namebanNameLabel)
+                                        .addComponent(namebanReasonLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(namebanSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tempbanLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(tempbanNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(tempbanButton)
-                                        .addComponent(tempbanTimeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(tempbanReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(tempbanTimeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tempbanReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tempbanQuietToggle))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(tempbanNameLabel)
                                         .addComponent(tempbanTimeLabel)
                                         .addComponent(tempbanReasonLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tempbanSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(unbanLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(unbanNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(unbanButton)
+                                        .addComponent(unbanRestoreToggle))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(unbanNameLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(unbanSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(unbannameLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(unbannameNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(unbannameButton)
+                                        .addComponent(unbannameQuietToggle))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(unbannameNameLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(unbannameSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(totalBansButton)
-                                        .addComponent(purgeBanlistButton))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(purgeBanlistButton)))
         );
 
         sidebarPane.addTab("Ban List", banListPanel);
@@ -1348,7 +1476,6 @@ public class BTC_MainPanel extends javax.swing.JFrame
                 staffListInfoActionPerformed(evt);
             }
         });
-
         staffListRank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Trial Mod", "Mod", "Admin"}));
 
         staffListSetRank.setText("Set Rank");
@@ -1835,10 +1962,15 @@ public class BTC_MainPanel extends javax.swing.JFrame
             return;
         }
         String reason = tempbanReasonText.getText();
+        Boolean quiet = tempbanQuietToggle.isSelected();
         String command = "tempban " + name + " " + time;
         if (!reason.isEmpty())
         {
             command += " " + reason;
+        }
+        if (quiet)
+        {
+            command += " -q";
         }
         getConnectionManager().sendCommand(command);
     }//GEN-LAST:event_tempbanButtonActionPerformed
@@ -1853,6 +1985,24 @@ public class BTC_MainPanel extends javax.swing.JFrame
         getConnectionManager().sendCommand(command);
     }//GEN-LAST:event_unbanButtonActionPerformed
 
+    private void unbannameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unbannameButtonActionPerformed
+        String command;
+        String name = unbannameNameText.getText();
+        if (name.isEmpty())
+        {
+            return;
+        }
+        if (name.contains("."))
+        {
+            command = "unbanip " + name;
+        }
+        else
+        {
+            command = "unbanname " + name;
+        }
+        getConnectionManager().sendCommand(command);
+    }//GEN-LAST:event_unbannameButtonActionPerformed
+
     private void banButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_banButtonActionPerformed
         String name = banNameText.getText();
         if (name.isEmpty())
@@ -1861,6 +2011,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
         }
         String reason = banReasonText.getText();
         Boolean rollback = banRollbackToggle.isSelected();
+        Boolean quiet = banQuietToggle.isSelected();
         String command = "ban " + name;
         if (!reason.isEmpty())
         {
@@ -1870,9 +2021,42 @@ public class BTC_MainPanel extends javax.swing.JFrame
         {
             command += " -nrb";
         }
+        if (quiet)
+        {
+            command += " -q";
+        }
         getConnectionManager().sendCommand(command);
 
     }//GEN-LAST:event_banButtonActionPerformed
+
+    private void namebanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namebanButtonActionPerformed
+        String name = namebanNameText.getText();
+        String command = "";
+        if (name.isEmpty())
+        {
+            return;
+        }
+        if (name.contains("."))
+        {
+            command = "banip " + name;
+        }
+        else
+        {
+            command = "banname " + name;
+        }
+        String reason = namebanReasonText.getText();
+        Boolean quiet = namebanQuietToggle.isSelected();
+        if (!reason.isEmpty())
+        {
+            command += " " + reason;
+        }
+        if (quiet)
+        {
+            command += " -q";
+        }
+        getConnectionManager().sendCommand(command);
+
+    }//GEN-LAST:event_namebanButtonActionPerformed
 
     private void announceSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_announceSendActionPerformed
         String message = announceText.getText();
@@ -2053,6 +2237,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
     private javax.swing.JLabel unbanNameLabel;
     private javax.swing.JTextField unbanNameText;
     private javax.swing.JSeparator unbanSeparator;
+    private javax.swing.JCheckBox unbanRestoreToggle;
     private javax.swing.JPanel fontPanel;
     private javax.swing.JTextField fontSizeSelect;
     private javax.swing.JButton fontSizeSet;
@@ -2063,6 +2248,23 @@ public class BTC_MainPanel extends javax.swing.JFrame
     private javax.swing.JComboBox<String> fontSelect;
     private javax.swing.JButton fontSet;
     public static String font;
+    private javax.swing.JCheckBox banQuietToggle;
+    private javax.swing.JCheckBox tempbanQuietToggle;
+    private javax.swing.JButton unbannameButton;
+    private javax.swing.JLabel unbannameLabel;
+    private javax.swing.JLabel unbannameNameLabel;
+    private javax.swing.JTextField unbannameNameText;
+    private javax.swing.JCheckBox unbannameQuietToggle;
+    private javax.swing.JSeparator unbannameSeparator;
+    private javax.swing.JButton namebanButton;
+    private javax.swing.JLabel namebanLabel;
+    private javax.swing.JPanel namebanListPanel;
+    private javax.swing.JLabel namebanNameLabel;
+    private javax.swing.JTextField namebanNameText;
+    private javax.swing.JLabel namebanReasonLabel;
+    private javax.swing.JTextField namebanReasonText;
+    private javax.swing.JCheckBox namebanQuietToggle;
+    private javax.swing.JSeparator namebanSeparator;
     // End of variables declaration//GEN-END:variables
 
     public javax.swing.JButton getBtnConnect()
