@@ -32,6 +32,7 @@ import java.util.stream.Collectors;
 import javax.swing.*;
 import javax.swing.Timer;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.text.*;
 import org.apache.commons.lang3.StringUtils;
 
@@ -168,7 +169,8 @@ public class BTC_MainPanel extends javax.swing.JFrame
                 banButton, unbanButton, tempbanButton, totalBansButton, purgeBanlistButton, banRollbackToggle,
                 staffListNameText, staffListAdd, staffListRemove, staffListInfo, staffListRank, staffListSetRank, staffListView, staffListClean,
                 staffWorldTimeSelect, staffWorldTimeSet, staffWorldWeatherSelect, staffWorldWeatherSet, namebanNameText, namebanReasonText,
-                namebanButton, unbannameButton, unbannameNameText, banQuietToggle, namebanQuietToggle, tempbanQuietToggle, unbanRestoreToggle, unbannameQuietToggle
+                namebanButton, unbannameButton, unbannameNameText, banQuietToggle, namebanQuietToggle, tempbanQuietToggle, unbanRestoreToggle,
+                unbannameQuietToggle, toggleButton, toggleValueText, toggleValue2Text, toggleSelect
                 );
         for (JComponent component : components)
         {
@@ -625,136 +627,150 @@ public class BTC_MainPanel extends javax.swing.JFrame
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollBar1 = new javax.swing.JScrollBar();
-        splitPane = new javax.swing.JSplitPane();
-        main = new javax.swing.JPanel();
-        mainOutputScoll = new javax.swing.JScrollPane();
-        mainOutput = new javax.swing.JTextPane();
-        btnDisconnect = new javax.swing.JButton();
-        btnSend = new javax.swing.JButton();
-        txtServer = new javax.swing.JComboBox<>();
-        chkAutoScroll = new javax.swing.JCheckBox();
-        txtCommand = new javax.swing.JTextField();
-        btnConnect = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        clearLogs = new javax.swing.JButton();
-        tps = new javax.swing.JLabel();
-        sidebarPane = new javax.swing.JTabbedPane();
-        playerListPanel = new javax.swing.JPanel();
-        tblPlayersScroll = new javax.swing.JScrollPane();
-        tblPlayers = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        txtNumPlayers = new javax.swing.JTextField();
-        filterPanel = new javax.swing.JPanel();
-        chkIgnorePreprocessCommands = new javax.swing.JCheckBox();
-        chkShowStaffChatOnly = new javax.swing.JCheckBox();
-        chkShowChatOnly = new javax.swing.JCheckBox();
-        chkIgnoreErrors = new javax.swing.JCheckBox();
-        chkIgnoreServerCommands = new javax.swing.JCheckBox();
-        chkIgnoreWarnings = new javax.swing.JCheckBox();
-        chkIgnoreAsyncWorldEdit = new javax.swing.JCheckBox();
-        chkIgnoreGuildChat = new javax.swing.JCheckBox();
-        commandsPanel = new javax.swing.JPanel();
-        favoriteButtonsPanelHolder = new javax.swing.JPanel();
-        favoriteButtonsPanelScroll = new javax.swing.JScrollPane();
+        jScrollBar1 = new JScrollBar();
+        splitPane = new JSplitPane();
+        main = new JPanel();
+        mainOutputScoll = new JScrollPane();
+        mainOutput = new JTextPane();
+        btnDisconnect = new JButton();
+        btnSend = new JButton();
+        txtServer = new JComboBox<>();
+        chkAutoScroll = new JCheckBox();
+        txtCommand = new JTextField();
+        btnConnect = new JButton();
+        jLabel1 = new JLabel();
+        jLabel2 = new JLabel();
+        clearLogs = new JButton();
+        tps = new JLabel();
+        sidebarPane = new JTabbedPane();
+        playerListPanel = new JPanel();
+        tblPlayersScroll = new JScrollPane();
+        tblPlayers = new JTable();
+        jLabel3 = new JLabel();
+        txtNumPlayers = new JTextField();
+        filterPanel = new JPanel();
+        chkIgnorePreprocessCommands = new JCheckBox();
+        chkShowStaffChatOnly = new JCheckBox();
+        chkShowChatOnly = new JCheckBox();
+        chkIgnoreErrors = new JCheckBox();
+        chkIgnoreServerCommands = new JCheckBox();
+        chkIgnoreWarnings = new JCheckBox();
+        chkIgnoreAsyncWorldEdit = new JCheckBox();
+        chkIgnoreGuildChat = new JCheckBox();
+        commandsPanel = new JPanel();
+        favoriteButtonsPanelHolder = new JPanel();
+        favoriteButtonsPanelScroll = new JScrollPane();
         favoriteButtonsPanel = new BTC_FavoriteButtonsPanel(favButtonList);
-        chatPanel = new javax.swing.JPanel();
-        sayLabel = new javax.swing.JLabel();
-        sayText = new javax.swing.JTextField();
-        saySend = new javax.swing.JButton();
-        cSayLabel = new javax.swing.JLabel();
-        cSayText = new javax.swing.JTextField();
-        cSaySend = new javax.swing.JButton();
-        rawsayLabel = new javax.swing.JLabel();
-        rawsayText = new javax.swing.JTextField();
-        rawsaySend = new javax.swing.JButton();
-        staffChatLabel = new javax.swing.JLabel();
-        staffChatText = new javax.swing.JTextField();
-        staffChatSend = new javax.swing.JButton();
-        announceLabel = new javax.swing.JLabel();
-        announceText = new javax.swing.JTextField();
-        announceSend = new javax.swing.JButton();
-        banListPanel = new javax.swing.JPanel();
-        banLabel = new javax.swing.JLabel();
-        banNameText = new javax.swing.JTextField();
-        banReasonText = new javax.swing.JTextField();
-        banButton = new javax.swing.JButton();
-        banNameLabel = new javax.swing.JLabel();
-        banReasonLabel = new javax.swing.JLabel();
-        banRollbackToggle = new javax.swing.JCheckBox();
-        banQuietToggle = new javax.swing.JCheckBox();
-        banSeparator = new javax.swing.JSeparator();
-        namebanLabel = new javax.swing.JLabel();
-        namebanNameText = new javax.swing.JTextField();
-        namebanReasonText = new javax.swing.JTextField();
-        namebanButton = new javax.swing.JButton();
-        namebanNameLabel = new javax.swing.JLabel();
-        namebanReasonLabel = new javax.swing.JLabel();
-        namebanQuietToggle = new javax.swing.JCheckBox();
-        namebanSeparator = new javax.swing.JSeparator();
-        unbannameLabel = new javax.swing.JLabel();
-        unbannameNameText = new javax.swing.JTextField();
-        unbannameButton = new javax.swing.JButton();
-        unbannameNameLabel = new javax.swing.JLabel();
-        unbannameQuietToggle = new javax.swing.JCheckBox();
-        unbannameSeparator = new javax.swing.JSeparator();
-        unbanLabel = new javax.swing.JLabel();
-        unbanNameText = new javax.swing.JTextField();
-        unbanButton = new javax.swing.JButton();
-        unbanNameLabel = new javax.swing.JLabel();
-        unbanRestoreToggle = new javax.swing.JCheckBox();
-        unbanSeparator = new javax.swing.JSeparator();
-        tempbanLabel = new javax.swing.JLabel();
-        tempbanNameText = new javax.swing.JTextField();
-        tempbanTimeText = new javax.swing.JTextField();
-        tempbanReasonText = new javax.swing.JTextField();
-        tempbanButton = new javax.swing.JButton();
-        tempbanNameLabel = new javax.swing.JLabel();
-        tempbanTimeLabel = new javax.swing.JLabel();
-        tempbanReasonLabel = new javax.swing.JLabel();
-        tempbanQuietToggle = new javax.swing.JCheckBox();
-        tempbanSeparator = new javax.swing.JSeparator();
-        totalBansButton = new javax.swing.JButton();
-        purgeBanlistButton = new javax.swing.JButton();
-        staffListPanel = new javax.swing.JPanel();
-        staffListNameText = new javax.swing.JTextField();
-        staffListNameLabel = new javax.swing.JLabel();
-        staffListAdd = new javax.swing.JButton();
-        staffListRemove = new javax.swing.JButton();
-        staffListInfo = new javax.swing.JButton();
-        staffListRank = new javax.swing.JComboBox<>();
-        staffListSetRank = new javax.swing.JButton();
-        staffListSeparator = new javax.swing.JSeparator();
-        staffListView = new javax.swing.JButton();
-        staffListClean = new javax.swing.JButton();
-        staffWorldPanel = new javax.swing.JPanel();
-        staffWorldTimeSelect = new javax.swing.JComboBox<>();
-        staffWorldTimeSet = new javax.swing.JButton();
-        staffWorldWeatherSelect = new javax.swing.JComboBox<>();
-        staffWorldWeatherSet = new javax.swing.JButton();
-        themePanel = new javax.swing.JPanel();
-        themeScrollPane = new javax.swing.JScrollPane();
-        themeTable = new javax.swing.JTable();
-        themeCustomPath = new javax.swing.JTextField();
-        themeFileSelect = new javax.swing.JButton();
-        themeApplyCustom = new javax.swing.JButton();
-        themeCustomDarkTheme = new javax.swing.JCheckBox();
-        fontPanel = new javax.swing.JPanel();
-        fontSizeLabel = new javax.swing.JLabel();
-        fontSizeSelect = new javax.swing.JTextField();
-        fontSizeSet = new javax.swing.JButton();
-        fontLabel = new javax.swing.JLabel();
-        fontSelect = new javax.swing.JComboBox<>();
-        fontSet = new javax.swing.JButton();
+        chatPanel = new JPanel();
+        sayLabel = new JLabel();
+        sayText = new JTextField();
+        saySend = new JButton();
+        cSayLabel = new JLabel();
+        cSayText = new JTextField();
+        cSaySend = new JButton();
+        rawsayLabel = new JLabel();
+        rawsayText = new JTextField();
+        rawsaySend = new JButton();
+        staffChatLabel = new JLabel();
+        staffChatText = new JTextField();
+        staffChatSend = new JButton();
+        announceLabel = new JLabel();
+        announceText = new JTextField();
+        announceSend = new JButton();
+        banListPanel = new JPanel();
+        banLabel = new JLabel();
+        banNameText = new JTextField();
+        banReasonText = new JTextField();
+        banButton = new JButton();
+        banNameLabel = new JLabel();
+        banReasonLabel = new JLabel();
+        banRollbackToggle = new JCheckBox();
+        banQuietToggle = new JCheckBox();
+        banSeparator = new JSeparator();
+        namebanLabel = new JLabel();
+        namebanNameText = new JTextField();
+        namebanReasonText = new JTextField();
+        namebanButton = new JButton();
+        namebanNameLabel = new JLabel();
+        namebanReasonLabel = new JLabel();
+        namebanQuietToggle = new JCheckBox();
+        namebanSeparator = new JSeparator();
+        unbannameLabel = new JLabel();
+        unbannameNameText = new JTextField();
+        unbannameButton = new JButton();
+        unbannameNameLabel = new JLabel();
+        unbannameQuietToggle = new JCheckBox();
+        unbannameSeparator = new JSeparator();
+        unbanLabel = new JLabel();
+        unbanNameText = new JTextField();
+        unbanButton = new JButton();
+        unbanNameLabel = new JLabel();
+        unbanRestoreToggle = new JCheckBox();
+        unbanSeparator = new JSeparator();
+        tempbanLabel = new JLabel();
+        tempbanNameText = new JTextField();
+        tempbanTimeText = new JTextField();
+        tempbanReasonText = new JTextField();
+        tempbanButton = new JButton();
+        tempbanNameLabel = new JLabel();
+        tempbanTimeLabel = new JLabel();
+        tempbanReasonLabel = new JLabel();
+        tempbanQuietToggle = new JCheckBox();
+        tempbanSeparator = new JSeparator();
+        totalBansButton = new JButton();
+        purgeBanlistButton = new JButton();
+        staffPanel = new JPanel();
+        staffListNameText = new JTextField();
+        staffListNameLabel = new JLabel();
+        staffListAdd = new JButton();
+        staffListRemove = new JButton();
+        staffListInfo = new JButton();
+        staffListRank = new JComboBox<>();
+        staffListSetRank = new JButton();
+        staffListSeparator = new JSeparator();
+        staffListView = new JButton();
+        staffListClean = new JButton();
+        staffWorldPanel = new JPanel();
+        staffWorldTimeSelect = new JComboBox<>();
+        staffWorldTimeSet = new JButton();
+        staffWorldWeatherSelect = new JComboBox<>();
+        staffWorldWeatherSet = new JButton();
+        themePanel = new JPanel();
+        themeScrollPane = new JScrollPane();
+        themeTable = new JTable();
+        themeCustomPath = new JTextField();
+        themeFileSelect = new JButton();
+        themeApplyCustom = new JButton();
+        themeCustomDarkTheme = new JCheckBox();
+        fontPanel = new JPanel();
+        fontSizeLabel = new JLabel();
+        fontSizeSelect = new JTextField();
+        fontSizeSet = new JButton();
+        fontLabel = new JLabel();
+        fontSelect = new JComboBox<>();
+        fontSet = new JButton();
+        toggleSelect = new JComboBox<>();
+        toggleButton = new JButton();
+        toggleLabel = new JLabel();
+        togglesLabel = new JLabel();
+        toggleValueLabel = new JLabel();
+        toggleValue2Label = new JLabel();
+        toggleValueText = new JTextField();
+        toggleValue2Text = new JTextField();
+        toggleSeparator = new JSeparator();
+        staffWorldSeperator = new JSeparator();
+        staffListSeperator = new JSeparator();
+        staffWorldLabel = new JLabel();
+        staffListLabel = new JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("BukkitTelnetClient");
-        setPreferredSize(new java.awt.Dimension(1231, 663));
+        setPreferredSize(new Dimension(1231, 663));
 
         splitPane.setResizeWeight(1.0);
-        splitPane.setMinimumSize(new java.awt.Dimension(75, 62));
-        splitPane.setPreferredSize(new java.awt.Dimension(1027, 452));
+        splitPane.setMinimumSize(new Dimension(75, 62));
+        splitPane.setPreferredSize(new Dimension(1027, 452));
 
         mainOutput.setEditable(false);
         mainOutput.setBorder(null);
@@ -762,20 +778,20 @@ public class BTC_MainPanel extends javax.swing.JFrame
 
         font = themes.lastSelectedFont;
         fontSize = themes.lastSelectedFontSize;
-        mainOutput.setFont(new java.awt.Font(font, 0, fontSize)); // NOI18N
+        mainOutput.setFont(new Font(font, 0, fontSize)); // NOI18N
 
         btnDisconnect.setText("Disconnect");
         btnDisconnect.setEnabled(false);
-        btnDisconnect.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnDisconnect.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 btnDisconnectActionPerformed(evt);
             }
         });
 
         btnSend.setText("Send");
         btnSend.setEnabled(false);
-        btnSend.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnSend.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 btnSendActionPerformed(evt);
             }
         });
@@ -786,15 +802,15 @@ public class BTC_MainPanel extends javax.swing.JFrame
         chkAutoScroll.setText("AutoScroll");
 
         txtCommand.setEnabled(false);
-        txtCommand.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        txtCommand.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
                 txtCommandKeyPressed(evt);
             }
         });
 
         btnConnect.setText("Connect");
-        btnConnect.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnConnect.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 btnConnectActionPerformed(evt);
             }
         });
@@ -804,177 +820,177 @@ public class BTC_MainPanel extends javax.swing.JFrame
         jLabel2.setText("Server:");
 
         clearLogs.setText("Clear Logs");
-        clearLogs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        clearLogs.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 clearLogsActionPerformed(evt);
             }
         });
 
         tps.setText("TPS: N/A");
 
-        javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
+        GroupLayout mainLayout = new GroupLayout(main);
         main.setLayout(mainLayout);
         mainLayout.setHorizontalGroup(
-                mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(mainLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addComponent(mainOutputScoll)
                                         .addGroup(mainLayout.createSequentialGroup()
-                                                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jLabel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(jLabel1))
                                                 .addGap(18, 18, 18)
-                                                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                         .addComponent(txtCommand)
                                                         .addComponent(txtServer, 0, 593, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(btnConnect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(btnSend, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(btnConnect, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(btnSend, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                         .addComponent(btnDisconnect)
                                                         .addComponent(chkAutoScroll)))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainLayout.createSequentialGroup()
+                                        .addGroup(GroupLayout.Alignment.TRAILING, mainLayout.createSequentialGroup()
                                                 .addComponent(tps)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(clearLogs)))
                                 .addContainerGap())
         );
 
-        mainLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[]{btnConnect, btnDisconnect, btnSend, chkAutoScroll});
+        mainLayout.linkSize(SwingConstants.HORIZONTAL, new Component[]{btnConnect, btnDisconnect, btnSend, chkAutoScroll});
 
         mainLayout.setVerticalGroup(
-                mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(mainLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(mainLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(clearLogs)
                                         .addComponent(tps))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(mainOutputScoll, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(mainOutputScoll, GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(mainLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(txtCommand, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel1)
                                         .addComponent(btnSend)
                                         .addComponent(chkAutoScroll))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(mainLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel2)
                                         .addComponent(btnConnect)
                                         .addComponent(btnDisconnect)
-                                        .addComponent(txtServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtServer, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap())
         );
 
         splitPane.setLeftComponent(main);
 
-        sidebarPane.setMinimumSize(new java.awt.Dimension(360, 450));
-        sidebarPane.setPreferredSize(new java.awt.Dimension(360, 450));
+        sidebarPane.setMinimumSize(new Dimension(360, 450));
+        sidebarPane.setPreferredSize(new Dimension(360, 450));
 
         tblPlayers.setAutoCreateRowSorter(true);
-        tblPlayers.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblPlayers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tblPlayersScroll.setViewportView(tblPlayers);
-        tblPlayers.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblPlayers.getColumnModel().getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         jLabel3.setText("# Players:");
 
         txtNumPlayers.setEditable(false);
 
-        javax.swing.GroupLayout playerListPanelLayout = new javax.swing.GroupLayout(playerListPanel);
+        GroupLayout playerListPanelLayout = new GroupLayout(playerListPanel);
         playerListPanel.setLayout(playerListPanelLayout);
         playerListPanelLayout.setHorizontalGroup(
-                playerListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                playerListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(playerListPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(playerListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(tblPlayersScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addGroup(playerListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(tblPlayersScroll, GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                         .addGroup(playerListPanelLayout.createSequentialGroup()
                                                 .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(txtNumPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(txtNumPlayers, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap())
         );
         playerListPanelLayout.setVerticalGroup(
-                playerListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                playerListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(playerListPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(tblPlayersScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(playerListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tblPlayersScroll, GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(playerListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel3)
-                                        .addComponent(txtNumPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtNumPlayers, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap())
         );
 
         sidebarPane.addTab("Player List", playerListPanel);
 
         chkIgnorePreprocessCommands.setText("Ignore \"[PREPROCESS_COMMAND]\" messages");
-        chkIgnorePreprocessCommands.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        chkIgnorePreprocessCommands.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 chkIgnorePreprocessCommandsActionPerformed(evt);
             }
         });
 
         chkShowStaffChatOnly.setText("Show staff chat only");
-        chkShowStaffChatOnly.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        chkShowStaffChatOnly.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 chkShowStaffChatOnlyActionPerformed(evt);
             }
         });
 
         chkShowChatOnly.setText("Show chat only");
-        chkShowChatOnly.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        chkShowChatOnly.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 chkShowChatOnlyActionPerformed(evt);
             }
         });
 
         chkIgnoreErrors.setText("Ignore errors");
-        chkIgnoreErrors.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        chkIgnoreErrors.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 chkIgnoreErrorsActionPerformed(evt);
             }
         });
 
         chkIgnoreServerCommands.setText("Ignore \"issued server command\" messages");
-        chkIgnoreServerCommands.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        chkIgnoreServerCommands.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 chkIgnoreServerCommandsActionPerformed(evt);
             }
         });
 
         chkIgnoreWarnings.setText("Ignore warnings");
-        chkIgnoreWarnings.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        chkIgnoreWarnings.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 chkIgnoreWarningsActionPerformed(evt);
             }
         });
 
         chkIgnoreAsyncWorldEdit.setText("Ignore AsyncWorldEdit");
-        chkIgnoreAsyncWorldEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        chkIgnoreAsyncWorldEdit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 chkIgnoreAsyncWorldEditActionPerformed(evt);
             }
         });
 
         chkIgnoreGuildChat.setText("Ignore GuildChat");
-        chkIgnoreGuildChat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        chkIgnoreGuildChat.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 chkIgnoreGuildChatActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout filterPanelLayout = new javax.swing.GroupLayout(filterPanel);
+        GroupLayout filterPanelLayout = new GroupLayout(filterPanel);
         filterPanel.setLayout(filterPanelLayout);
         filterPanelLayout.setHorizontalGroup(
-                filterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                filterPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(filterPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(filterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(filterPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addComponent(chkIgnorePreprocessCommands)
                                         .addComponent(chkShowStaffChatOnly)
                                         .addComponent(chkShowChatOnly)
@@ -986,52 +1002,115 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                 .addContainerGap(100, Short.MAX_VALUE))
         );
         filterPanelLayout.setVerticalGroup(
-                filterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                filterPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(filterPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(chkIgnorePreprocessCommands, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkIgnoreServerCommands, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkShowChatOnly, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkIgnoreWarnings, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkIgnoreErrors, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkShowStaffChatOnly, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkIgnoreAsyncWorldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkIgnoreGuildChat, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(chkIgnorePreprocessCommands, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkIgnoreServerCommands, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkShowChatOnly, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkIgnoreWarnings, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkIgnoreErrors, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkShowStaffChatOnly, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkIgnoreAsyncWorldEdit, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkIgnoreGuildChat, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(449, Short.MAX_VALUE))
         );
 
         sidebarPane.addTab("Filters", filterPanel);
 
-        favoriteButtonsPanelHolder.setLayout(new java.awt.BorderLayout());
+
+        favoriteButtonsPanelHolder.setLayout(new BorderLayout());
 
         favoriteButtonsPanelScroll.setBorder(null);
 
         favoriteButtonsPanel.setLayout(null);
         favoriteButtonsPanelScroll.setViewportView(favoriteButtonsPanel);
 
-        favoriteButtonsPanelHolder.add(favoriteButtonsPanelScroll, java.awt.BorderLayout.CENTER);
+        togglesLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        togglesLabel.setText("Toggles");
 
-        javax.swing.GroupLayout commandsPanelLayout = new javax.swing.GroupLayout(commandsPanel);
+        toggleButton.setText("Toggle");
+        toggleButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                toggleButtonActionPerformed(evt);
+            }
+        });
+
+        toggleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        toggleLabel.setText("Toggle");
+
+        toggleValueLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        toggleValueLabel.setText("Value");
+
+        toggleValue2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        toggleValue2Label.setText("Value");
+
+        String toggles[] = {
+                "Water Place", "Fire Place", "Lava Placement", "Fluid Spread", "Lava DMG",
+                "Fire Spread", "Frostwalk", "Prelog", "Lockdown", "Pet Protect", "Entity Wipe",
+                "No Nuke", "Explosives", "Unsafe Enchs", "Bells", "Armor Stands", "Structure Blocks",
+                "Jigsaws", "Grindstones", "Jukeboxes", "Spawners", "4chan", "Beehives", "Respawn Anchors",
+                "Auto TP", "Auto Clear", "Minecarts", "Landmines", "Mp44", "Toss Mob"
+        };
+        toggleSelect.setModel(new DefaultComboBoxModel<>(toggles));
+
+        favoriteButtonsPanelHolder.add(favoriteButtonsPanelScroll, BorderLayout.CENTER);
+
+        GroupLayout commandsPanelLayout = new GroupLayout(commandsPanel);
         commandsPanel.setLayout(commandsPanelLayout);
         commandsPanelLayout.setHorizontalGroup(
-                commandsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(commandsPanelLayout.createSequentialGroup()
-                                .addGap(0, 0, 0)
-                                .addComponent(favoriteButtonsPanelHolder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(0, 0, 0))
-        );
-        commandsPanelLayout.setVerticalGroup(
-                commandsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                commandsPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(commandsPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(favoriteButtonsPanelHolder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(commandsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(toggleSeparator)
+                                        .addComponent(togglesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(commandsPanelLayout.createSequentialGroup()
+                                                .addGroup(commandsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(toggleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                                                        .addComponent(toggleSelect))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(commandsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(toggleValueText)
+                                                        .addComponent(toggleValueLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(commandsPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                        .addComponent(toggleValue2Text)
+                                                        .addComponent(toggleValue2Label, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(toggleButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                        .addContainerGap()
+                                .addGap(5, 5, 5))
+                                .addComponent(favoriteButtonsPanelHolder, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(0, 0, 0)
+        );
+        commandsPanelLayout.setVerticalGroup(
+                commandsPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(commandsPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(togglesLabel)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(commandsPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(toggleSelect, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(toggleValueText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(toggleValue2Text)
+                                        .addComponent(toggleButton))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(commandsPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(toggleLabel)
+                                        .addComponent(toggleValueLabel)
+                                        .addComponent(toggleValue2Label))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(toggleSeparator, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(favoriteButtonsPanelHolder, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
         );
 
@@ -1039,128 +1118,128 @@ public class BTC_MainPanel extends javax.swing.JFrame
 
         chatPanel.setAlignmentY(0.05F);
 
-        sayLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sayLabel.setText("Say:");
+        sayLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        sayLabel.setText("Say");
         sayLabel.setAlignmentY(0.0F);
 
         sayText.setName(""); // NOI18N
 
         saySend.setText("Send");
-        saySend.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        saySend.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 saySendActionPerformed(evt);
             }
         });
 
-        cSayLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cSayLabel.setHorizontalAlignment(SwingConstants.CENTER);
         cSayLabel.setText("Csay");
         cSayLabel.setAlignmentY(0.0F);
 
         cSaySend.setText("Send");
-        cSaySend.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        cSaySend.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 cSaySendActionPerformed(evt);
             }
         });
 
-        rawsayLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rawsayLabel.setHorizontalAlignment(SwingConstants.CENTER);
         rawsayLabel.setText("Rawsay");
         rawsayLabel.setAlignmentY(0.0F);
 
         rawsayText.setToolTipText("");
 
         rawsaySend.setText("Send");
-        rawsaySend.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        rawsaySend.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 rawsaySendActionPerformed(evt);
             }
         });
 
-        staffChatLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        staffChatLabel.setHorizontalAlignment(SwingConstants.CENTER);
         staffChatLabel.setText("Staff Chat");
         staffChatLabel.setAlignmentY(0.0F);
 
         staffChatSend.setText("Send");
-        staffChatSend.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        staffChatSend.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 staffChatSendActionPerformed(evt);
             }
         });
 
-        announceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        announceLabel.setHorizontalAlignment(SwingConstants.CENTER);
         announceLabel.setText("Announce");
         announceLabel.setAlignmentY(0.0F);
 
         announceSend.setText("Send");
-        announceSend.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        announceSend.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 announceSendActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout chatPanelLayout = new javax.swing.GroupLayout(chatPanel);
+        GroupLayout chatPanelLayout = new GroupLayout(chatPanel);
         chatPanel.setLayout(chatPanelLayout);
         chatPanelLayout.setHorizontalGroup(
-                chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                chatPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(chatPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(rawsayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cSayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(staffChatLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                                        .addComponent(announceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(sayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                .addGroup(chatPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(rawsayLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cSayLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(staffChatLabel, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                                        .addComponent(announceLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(sayLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(chatPanelLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
                                         .addGroup(chatPanelLayout.createSequentialGroup()
                                                 .addComponent(announceText)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(announceSend))
                                         .addGroup(chatPanelLayout.createSequentialGroup()
                                                 .addComponent(sayText)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(saySend))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, chatPanelLayout.createSequentialGroup()
+                                        .addGroup(GroupLayout.Alignment.LEADING, chatPanelLayout.createSequentialGroup()
                                                 .addComponent(staffChatText)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(staffChatSend))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, chatPanelLayout.createSequentialGroup()
+                                        .addGroup(GroupLayout.Alignment.LEADING, chatPanelLayout.createSequentialGroup()
                                                 .addComponent(rawsayText)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(rawsaySend))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, chatPanelLayout.createSequentialGroup()
+                                        .addGroup(GroupLayout.Alignment.LEADING, chatPanelLayout.createSequentialGroup()
                                                 .addComponent(cSayText)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(cSaySend)))
                                 .addContainerGap())
         );
         chatPanelLayout.setVerticalGroup(
-                chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                chatPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(chatPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(sayText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(chatPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(sayText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(sayLabel)
                                         .addComponent(saySend))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(cSayText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(chatPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(cSayText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(cSayLabel)
                                         .addComponent(cSaySend))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(rawsayText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(chatPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(rawsayText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(rawsayLabel)
                                         .addComponent(rawsaySend))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(staffChatText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(chatPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(staffChatText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(staffChatLabel)
                                         .addComponent(staffChatSend))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(announceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(chatPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(chatPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(announceText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(announceSend))
                                         .addComponent(announceLabel))
                                 .addContainerGap(467, Short.MAX_VALUE))
@@ -1168,20 +1247,20 @@ public class BTC_MainPanel extends javax.swing.JFrame
 
         sidebarPane.addTab("Chat", chatPanel);
 
-        banLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        banLabel.setHorizontalAlignment(SwingConstants.CENTER);
         banLabel.setText("Ban Player");
 
         banButton.setText("Ban");
-        banButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        banButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 banButtonActionPerformed(evt);
             }
         });
 
-        banNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        banNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         banNameLabel.setText("Name");
 
-        banReasonLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        banReasonLabel.setHorizontalAlignment(SwingConstants.CENTER);
         banReasonLabel.setText("Reason");
 
         banRollbackToggle.setSelected(true);
@@ -1192,27 +1271,27 @@ public class BTC_MainPanel extends javax.swing.JFrame
         banQuietToggle.setText("Q");
         banQuietToggle.setToolTipText("Quiet");
 
-        namebanLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        namebanLabel.setHorizontalAlignment(SwingConstants.CENTER);
         namebanLabel.setText("Ban Name/IP");
 
         namebanButton.setText("Ban");
-        namebanButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        namebanButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 namebanButtonActionPerformed(evt);
             }
         });
 
-        namebanNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        namebanNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         namebanNameLabel.setText("Name/IP");
 
-        namebanReasonLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        namebanReasonLabel.setHorizontalAlignment(SwingConstants.CENTER);
         namebanReasonLabel.setText("Reason");
         
         namebanQuietToggle.setSelected(false);
         namebanQuietToggle.setText("Q");
         namebanQuietToggle.setToolTipText("Quiet");
 
-        unbanLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        unbanLabel.setHorizontalAlignment(SwingConstants.CENTER);
         unbanLabel.setText("Unban Player");
 
         unbanRestoreToggle.setSelected(false);
@@ -1220,19 +1299,19 @@ public class BTC_MainPanel extends javax.swing.JFrame
         unbanRestoreToggle.setToolTipText("Restore");
 
         unbanButton.setText("Unban");
-        unbanButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        unbanButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 unbanButtonActionPerformed(evt);
             }
         });
 
-        unbanNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        unbanNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         unbanNameLabel.setText("Name");
 
-        unbannameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        unbannameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         unbannameLabel.setText("Unban Name/IP");
 
-        unbannameNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        unbannameNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         unbannameNameLabel.setText("Name/IP");
 
         unbannameQuietToggle.setSelected(false);
@@ -1240,32 +1319,32 @@ public class BTC_MainPanel extends javax.swing.JFrame
         unbannameQuietToggle.setToolTipText("Quiet");
 
         unbannameButton.setText("Unban");
-        unbannameButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        unbannameButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 unbannameButtonActionPerformed(evt);
             }
         });
 
-        tempbanLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tempbanLabel.setHorizontalAlignment(SwingConstants.CENTER);
         tempbanLabel.setText("Temp Ban Player");
 
         tempbanTimeText.setToolTipText("Example: 5m, 1h, 20y");
 
         tempbanButton.setText("Ban");
-        tempbanButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        tempbanButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 tempbanButtonActionPerformed(evt);
             }
         });
 
-        tempbanNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tempbanNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         tempbanNameLabel.setText("Name");
 
-        tempbanTimeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tempbanTimeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         tempbanTimeLabel.setText("Time");
         tempbanTimeLabel.setToolTipText("");
 
-        tempbanReasonLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tempbanReasonLabel.setHorizontalAlignment(SwingConstants.CENTER);
         tempbanReasonLabel.setText("Reason");
 
         tempbanQuietToggle.setSelected(false);
@@ -1273,259 +1352,304 @@ public class BTC_MainPanel extends javax.swing.JFrame
         tempbanQuietToggle.setToolTipText("Quiet");
 
         totalBansButton.setText("Total Bans");
-        totalBansButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        totalBansButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 totalBansButtonActionPerformed(evt);
             }
         });
 
         purgeBanlistButton.setText("Purge Ban List");
-        purgeBanlistButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        purgeBanlistButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 purgeBanlistButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout banListPanelLayout = new javax.swing.GroupLayout(banListPanel);
+        GroupLayout banListPanelLayout = new GroupLayout(banListPanel);
         banListPanel.setLayout(banListPanelLayout);
         banListPanelLayout.setHorizontalGroup(
-                banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(banListPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addComponent(banSeparator)
-                                        .addComponent(banLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(banLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(banListPanelLayout.createSequentialGroup()
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(banNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(banNameLabel, GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                                                         .addComponent(banNameText))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                         .addGroup(banListPanelLayout.createSequentialGroup()
                                                                 .addComponent(banReasonText)
                                                                 .addGap(5, 5, 5))
-                                                        .addComponent(banReasonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
-                                                .addComponent(banButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(banRollbackToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(banQuietToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                        .addComponent(banReasonLabel, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
+                                                .addComponent(banButton, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(5, 5, 5)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(banRollbackToggle, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(banQuietToggle, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED))
                                         .addComponent(namebanSeparator)
-                                        .addComponent(namebanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(namebanLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(banListPanelLayout.createSequentialGroup()
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(namebanNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(namebanNameLabel, GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                                                         .addComponent(namebanNameText))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                         .addGroup(banListPanelLayout.createSequentialGroup()
                                                                 .addComponent(namebanReasonText)
                                                                 .addGap(2, 2, 2))
-                                                        .addComponent(namebanReasonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(namebanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(namebanQuietToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                        .addComponent(namebanReasonLabel, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(namebanButton, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(5, 5, 5)
+                                            .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(namebanQuietToggle, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED))
                                         .addComponent(tempbanSeparator)
-                                        .addComponent(tempbanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tempbanLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(banListPanelLayout.createSequentialGroup()
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(tempbanNameText)
-                                                        .addComponent(tempbanNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(tempbanNameLabel, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(tempbanTimeText)
-                                                        .addComponent(tempbanTimeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(tempbanTimeLabel, GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                         .addComponent(tempbanReasonText)
-                                                        .addComponent(tempbanReasonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(tempbanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(tempbanQuietToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                        .addComponent(tempbanReasonLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(tempbanButton, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(5, 5, 5)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(tempbanQuietToggle, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED))
                                         .addComponent(unbanSeparator)
-                                        .addComponent(unbanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(unbanLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(banListPanelLayout.createSequentialGroup()
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                         .addComponent(unbanNameText)
-                                                        .addComponent(unbanNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(unbanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(unbanRestoreToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                        .addComponent(unbanNameLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(unbanButton, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(5, 5, 5)
+                                                .addComponent(unbanRestoreToggle, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED))
                                         .addComponent(unbannameSeparator)
-                                        .addComponent(unbannameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(unbannameLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(banListPanelLayout.createSequentialGroup()
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                         .addComponent(unbannameNameText)
-                                                        .addComponent(unbannameNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(unbannameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(unbannameQuietToggle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                        .addComponent(unbannameNameLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(unbannameButton, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(5, 5, 5)
+                                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(unbannameQuietToggle, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED))
                                         .addGroup(banListPanelLayout.createSequentialGroup()
-                                                .addComponent(totalBansButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(totalBansButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(purgeBanlistButton)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGap(5, 5, 5)))
                                 .addContainerGap())
         );
         banListPanelLayout.setVerticalGroup(
-                banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                banListPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(banListPanelLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(banLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(banNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(banReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(banNameText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(banReasonText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(banButton)
                                         .addComponent(banRollbackToggle))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(banNameLabel)
                                         .addComponent(banReasonLabel)
-                                        .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                 .addComponent(banQuietToggle)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(banSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(banSeparator, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(namebanLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(namebanNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(namebanReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(namebanNameText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(namebanReasonText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(namebanButton)
                                         .addComponent(namebanQuietToggle))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(namebanNameLabel)
                                         .addComponent(namebanReasonLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(namebanSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(namebanSeparator, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tempbanLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tempbanNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tempbanNameText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(tempbanButton)
-                                        .addComponent(tempbanTimeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,  javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(tempbanReasonText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tempbanTimeText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,  GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tempbanReasonText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(tempbanQuietToggle))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(tempbanNameLabel)
                                         .addComponent(tempbanTimeLabel)
                                         .addComponent(tempbanReasonLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tempbanSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tempbanSeparator, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(unbanLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(unbanNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(unbanNameText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(unbanButton)
                                         .addComponent(unbanRestoreToggle))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(unbanNameLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(unbanSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(unbanSeparator, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(unbannameLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(unbannameNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(unbannameNameText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(unbannameButton)
                                         .addComponent(unbannameQuietToggle))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(unbannameNameLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(unbannameSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(banListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(unbannameSeparator, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(banListPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(totalBansButton)
                                         .addComponent(purgeBanlistButton)))
         );
 
-        sidebarPane.addTab("Ban List", banListPanel);
+        sidebarPane.addTab("Ban/Unban", banListPanel);
 
-        staffListNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        staffListNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         staffListNameLabel.setText("Name");
 
         staffListAdd.setText("Add");
-        staffListAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        staffListAdd.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 staffListAddActionPerformed(evt);
             }
         });
 
         staffListRemove.setText("Remove");
-        staffListRemove.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        staffListRemove.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 staffListRemoveActionPerformed(evt);
             }
         });
 
         staffListInfo.setText("Info");
-        staffListInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        staffListInfo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 staffListInfoActionPerformed(evt);
             }
         });
-        staffListRank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Trial Mod", "Mod", "Admin"}));
+        staffListRank.setModel(new DefaultComboBoxModel<>(new String[]{"Trial Mod", "Mod", "Admin"}));
 
         staffListSetRank.setText("Set Rank");
-        staffListSetRank.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        staffListSetRank.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 staffListSetRankActionPerformed(evt);
             }
         });
 
         staffListView.setText("List");
-        staffListView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        staffListView.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 staffListViewActionPerformed(evt);
             }
         });
 
         staffListClean.setText("Clean");
-        staffListClean.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        staffListClean.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 staffListCleanActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout staffListPanelLayout = new javax.swing.GroupLayout(staffListPanel);
-        staffListPanel.setLayout(staffListPanelLayout);
-        staffListPanelLayout.setHorizontalGroup(
-                staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(staffListPanelLayout.createSequentialGroup()
+        staffListNameText.setHorizontalAlignment(SwingConstants.CENTER);
+
+        staffWorldTimeSelect.setModel(new DefaultComboBoxModel<>(new String[]{"Morning", "Noon", "Evening", "Night"}));
+
+        staffWorldTimeSet.setText("Set Time");
+        staffWorldTimeSet.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                staffWorldTimeSetActionPerformed(evt);
+            }
+        });
+
+        staffWorldWeatherSelect.setModel(new DefaultComboBoxModel<>(new String[]{"Off", "Rain", "Storm"}));
+
+        staffWorldWeatherSet.setText("Set Weather");
+        staffWorldWeatherSet.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                staffWorldWeatherSetActionPerformed(evt);
+            }
+        });
+
+        staffWorldLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        staffWorldLabel.setText("Staff World");
+
+        staffListLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        staffListLabel.setText("Staff List");
+
+        GroupLayout staffPanelLayout = new GroupLayout(staffPanel);
+        staffPanel.setLayout(staffPanelLayout);
+        staffPanelLayout.setHorizontalGroup(
+                staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(staffPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(staffListPanelLayout.createSequentialGroup()
-                                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(staffWorldLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(staffPanelLayout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addGroup(staffPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                        .addGroup(staffPanelLayout.createSequentialGroup()
+                                                                .addGroup(staffPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(staffWorldTimeSelect, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(staffWorldWeatherSelect, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addGroup(staffPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(staffWorldTimeSet, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(staffWorldWeatherSet, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                        .addComponent(staffListLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(staffListSeparator)
+                                        .addGroup(staffPanelLayout.createSequentialGroup()
+                                                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(staffListNameText)
-                                                        .addComponent(staffListNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(staffListSeparator))
+                                                        .addComponent(staffListNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                 .addContainerGap())
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffListPanelLayout.createSequentialGroup()
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffPanelLayout.createSequentialGroup()
                                                 .addGap(75, 75, 75)
                                                 .addComponent(staffListView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(staffListClean, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGap(74, 74, 74))
-                                        .addGroup(staffListPanelLayout.createSequentialGroup()
+                                        .addGroup(staffPanelLayout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addGroup(staffListPanelLayout.createSequentialGroup()
+                                                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(staffPanelLayout.createSequentialGroup()
                                                                 .addComponent(staffListRank, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addComponent(staffListSetRank, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(staffListPanelLayout.createSequentialGroup()
+                                                        .addGroup(staffPanelLayout.createSequentialGroup()
                                                                 .addComponent(staffListAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addComponent(staffListRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1533,91 +1657,52 @@ public class BTC_MainPanel extends javax.swing.JFrame
                                                                 .addComponent(staffListInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addContainerGap(47, Short.MAX_VALUE))))
         );
-        staffListPanelLayout.setVerticalGroup(
-                staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(staffListPanelLayout.createSequentialGroup()
+        staffPanelLayout.setVerticalGroup(
+                staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(staffPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(staffListNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(staffPanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(staffWorldLabel)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(staffPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(staffWorldTimeSelect, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(staffWorldTimeSet))
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(staffPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(staffWorldWeatherSelect, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(staffWorldWeatherSet))
+                                        .addContainerGap(429, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(staffListSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(staffListLabel)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(staffListNameText)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(staffListNameLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                .addGap(18, 18, 18)
+                                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                         .addComponent(staffListAdd)
                                         .addComponent(staffListRemove)
                                         .addComponent(staffListInfo))
                                 .addGap(18, 18, 18)
-                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(staffListRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(staffListSetRank))
                                 .addGap(18, 18, 18)
-                                .addComponent(staffListSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(staffListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(staffListClean)
                                         .addComponent(staffListView))
                                 .addGap(393, 393, 393))
         );
 
-        sidebarPane.addTab("Staff List", staffListPanel);
+        sidebarPane.addTab("Staff", staffPanel);
 
-        staffWorldTimeSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Morning", "Noon", "Evening", "Night"}));
-
-        staffWorldTimeSet.setText("Set Time");
-        staffWorldTimeSet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                staffWorldTimeSetActionPerformed(evt);
-            }
-        });
-
-        staffWorldWeatherSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Off", "Rain", "Storm"}));
-
-        staffWorldWeatherSet.setText("Set Weather");
-        staffWorldWeatherSet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                staffWorldWeatherSetActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout staffWorldPanelLayout = new javax.swing.GroupLayout(staffWorldPanel);
-        staffWorldPanel.setLayout(staffWorldPanelLayout);
-        staffWorldPanelLayout.setHorizontalGroup(
-                staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(staffWorldPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(staffWorldPanelLayout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(staffWorldPanelLayout.createSequentialGroup()
-                                                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(staffWorldTimeSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(staffWorldWeatherSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(staffWorldTimeSet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(staffWorldWeatherSet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                .addGap(0, 0, Short.MAX_VALUE)))
-                                .addContainerGap())
-        );
-        staffWorldPanelLayout.setVerticalGroup(
-                staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(staffWorldPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(staffWorldTimeSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(staffWorldTimeSet))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(staffWorldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(staffWorldWeatherSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(staffWorldWeatherSet))
-                                .addContainerGap(429, Short.MAX_VALUE))
-        );
-
-        sidebarPane.addTab("Staff World", staffWorldPanel);
-
-        themeTable.setModel(new javax.swing.table.DefaultTableModel(
+        themeTable.setModel(new DefaultTableModel(
                 new Object[][]{
                         {null, null, null, null},
                         {null, null, null, null},
@@ -1629,71 +1714,119 @@ public class BTC_MainPanel extends javax.swing.JFrame
                 }
         ));
         themeTable.setRowSelectionAllowed(false);
-        themeTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        themeTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
+        themeTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        themeTable.addMouseListener(new MouseAdapter() {
+            public void mouseReleased(MouseEvent evt) {
                 themeTableMouseReleased(evt);
             }
         });
-        themeTable.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
+        themeTable.addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent evt) {
                 themeTableKeyReleased(evt);
             }
         });
         themeScrollPane.setViewportView(themeTable);
 
         themeFileSelect.setText("File Select");
-        themeFileSelect.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        themeFileSelect.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 themeFileSelectActionPerformed(evt);
             }
         });
 
         themeApplyCustom.setText("Apply");
-        themeApplyCustom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        themeApplyCustom.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 themeApplyCustomActionPerformed(evt);
             }
         });
 
         themeCustomDarkTheme.setText("Dark");
         themeCustomDarkTheme.setToolTipText("Turn this on if your custom theme is a dark theme.");
-        themeCustomDarkTheme.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        themeCustomDarkTheme.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 themeCustomDarkThemeActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout themePanelLayout = new javax.swing.GroupLayout(themePanel);
+        fontSizeSet.setText("Apply");
+        fontSizeSet.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                fontSizeSetActionPerformed(evt);
+            }
+        });
+
+        fontSet.setText("Apply");
+        fontSet.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                fontSetActionPerformed(evt);
+            }
+        });
+
+        fontSizeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        fontSizeLabel.setText("Font Size");
+
+        fontLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        fontLabel.setText("Font");
+
+        String fonts[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+        fontSelect.setModel(new DefaultComboBoxModel<>(fonts));
+
+        GroupLayout themePanelLayout = new GroupLayout(themePanel);
         themePanel.setLayout(themePanelLayout);
         themePanelLayout.setHorizontalGroup(
-                themePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                themePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(themePanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(themePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(themeScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, themePanelLayout.createSequentialGroup()
-                                                .addGroup(themePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(themeFileSelect, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(themeCustomPath))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(themePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(themeApplyCustom, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                                                        .addComponent(themeCustomDarkTheme, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGap(8, 8, 8)))
+                                .addGroup(themePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(fontLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(fontSizeLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(themePanelLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
+                                        .addGroup(themePanelLayout.createSequentialGroup()
+                                                .addComponent(fontSelect)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(fontSet))
+                                        .addGroup(themePanelLayout.createSequentialGroup()
+                                                .addComponent(fontSizeSelect)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(fontSizeSet)))
                                 .addContainerGap())
+                                .addGap(0, 0, 0)
+                                .addGroup(themePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(themeScrollPane, GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
+                                        .addGroup(GroupLayout.Alignment.TRAILING, themePanelLayout.createSequentialGroup()
+                                                .addGroup(themePanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(themeFileSelect, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(themeCustomPath))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(themePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(themeApplyCustom, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                                                        .addComponent(themeCustomDarkTheme, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addGap(8, 8, 8)))
+                        .addGap(0, 0, 0)
         );
         themePanelLayout.setVerticalGroup(
-                themePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                themePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(themePanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(themeScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(themePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(themePanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(fontLabel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(fontSelect)
+                                        .addComponent(fontSet))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(themePanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(fontSizeLabel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(fontSizeSelect)
+                                        .addComponent(fontSizeSet))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(themeScrollPane, GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(themePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                         .addComponent(themeCustomPath)
                                         .addComponent(themeApplyCustom))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(themePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(themePanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(themeFileSelect)
                                         .addComponent(themeCustomDarkTheme))
                                 .addContainerGap())
@@ -1701,84 +1834,22 @@ public class BTC_MainPanel extends javax.swing.JFrame
 
         sidebarPane.addTab("Theme", themePanel);
 
-        fontSizeSet.setText("Apply");
-        fontSizeSet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fontSizeSetActionPerformed(evt);
-            }
-        });
-
-        fontSet.setText("Apply");
-        fontSet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fontSetActionPerformed(evt);
-            }
-        });
-
-        fontSizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fontSizeLabel.setText("Font Size");
-
-        fontLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fontLabel.setText("Font");
-
-        String fonts[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-        fontSelect.setModel(new javax.swing.DefaultComboBoxModel<>(fonts));
-
-        javax.swing.GroupLayout fontPanelLayout = new javax.swing.GroupLayout(fontPanel);
-        fontPanel.setLayout(fontPanelLayout);
-        fontPanelLayout.setHorizontalGroup(
-                fontPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(fontPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(fontPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(fontLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(fontSizeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(fontPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                        .addGroup(fontPanelLayout.createSequentialGroup()
-                                                .addComponent(fontSelect)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(fontSet))
-                                        .addGroup(fontPanelLayout.createSequentialGroup()
-                                                .addComponent(fontSizeSelect)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(fontSizeSet)))
-                                .addContainerGap())
-        );
-        fontPanelLayout.setVerticalGroup(
-                fontPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(fontPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(fontPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(fontLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(fontSelect)
-                                        .addComponent(fontSet))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(fontPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(fontSizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(fontSizeSelect)
-                                        .addComponent(fontSizeSet))
-                                .addContainerGap(467, Short.MAX_VALUE))
-        );
-
-        sidebarPane.addTab("Font", fontPanel);
-
         splitPane.setRightComponent(sidebarPane);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, 0)
-                                .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1231, Short.MAX_VALUE)
+                                .addComponent(splitPane, GroupLayout.DEFAULT_SIZE, 1231, Short.MAX_VALUE)
                                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, 0)
-                                .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
+                                .addComponent(splitPane, GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
                                 .addGap(0, 0, 0))
         );
 
@@ -2098,6 +2169,27 @@ public class BTC_MainPanel extends javax.swing.JFrame
         }
     }//GEN-LAST:event_saySendActionPerformed
 
+    private void toggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleButtonActionPerformed
+        String toggle = toggleSelect.getSelectedItem().toString().toLowerCase().replace(" ", "");
+        if (toggle.isEmpty())
+        {
+            return;
+        }
+        String value = toggleValueText.getText();
+        String value2 = toggleValue2Text.getText();
+        String command = "toggle " + toggle;
+        if (!value.isEmpty())
+        {
+            command += " " + value;
+        }
+        if (!value2.isEmpty())
+        {
+            command += " " + value2;
+        }
+        getConnectionManager().sendCommand(command);
+
+    }//GEN-LAST:event_toggleButtonActionPerformed
+
     private void chkShowChatOnlyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkShowChatOnlyActionPerformed
         BukkitTelnetClient.config.filterShowChatOnly = chkShowChatOnly.isSelected();
         BukkitTelnetClient.config.save();
@@ -2147,7 +2239,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
     private javax.swing.JButton staffListInfo;
     private javax.swing.JLabel staffListNameLabel;
     private javax.swing.JTextField staffListNameText;
-    private javax.swing.JPanel staffListPanel;
+    private javax.swing.JPanel staffPanel;
     private javax.swing.JComboBox<String> staffListRank;
     private javax.swing.JButton staffListRemove;
     private javax.swing.JSeparator staffListSeparator;
@@ -2265,6 +2357,21 @@ public class BTC_MainPanel extends javax.swing.JFrame
     private javax.swing.JTextField namebanReasonText;
     private javax.swing.JCheckBox namebanQuietToggle;
     private javax.swing.JSeparator namebanSeparator;
+
+    private javax.swing.JComboBox<String> toggleSelect;
+    private javax.swing.JLabel toggleLabel;
+    private javax.swing.JLabel togglesLabel;
+    private javax.swing.JLabel toggleValueLabel;
+    private javax.swing.JLabel toggleValue2Label;
+    private javax.swing.JTextField toggleValueText;
+    private javax.swing.JTextField toggleValue2Text;
+    private javax.swing.JButton toggleButton;
+    private javax.swing.JSeparator toggleSeparator;
+    private javax.swing.JSeparator staffListSeperator;
+    private javax.swing.JSeparator staffWorldSeperator;
+    private javax.swing.JLabel staffListLabel;
+    private javax.swing.JLabel staffWorldLabel;
+
     // End of variables declaration//GEN-END:variables
 
     public javax.swing.JButton getBtnConnect()

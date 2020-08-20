@@ -5,7 +5,15 @@
     <playerCommands>
         <playerCommand>
             <name>Ban</name>
-            <format>glist ban $TARGET_NAME</format>
+            <format>ban $TARGET_NAME</format>
+        </playerCommand>
+        <playerCommand>
+            <name>Ban Name</name>
+            <format>banname $TARGET_NAME</format>
+        </playerCommand>
+        <playerCommand>
+            <name>Ban IP</name>
+            <format>ban $TARGET_IP</format>
         </playerCommand>
         <playerCommand>
             <name>Toggle Mute</name>
@@ -13,7 +21,7 @@
         </playerCommand>
         <playerCommand>
             <name>Kick</name>
-            <format>tempban $TARGET_NAME 10s Kicked</format>
+            <format>kick $TARGET_NAME</format>
         </playerCommand>
         <playerCommand>
             <name>Tempban 5m + Reason</name>
@@ -57,7 +65,7 @@
         </playerCommand>
         <playerCommand>
             <name>Uncage</name>
-            <format>cage $TARGET_NAME off</format>
+            <format>uncage $TARGET_NAME</format>
         </playerCommand>
         <playerCommand>
             <name>Doom</name>
@@ -110,6 +118,14 @@
             <label>Cake</label>
         </favoriteButton>
         <favoriteButton>
+            <command>cookie</command>
+            <label>Cookie</label>
+        </favoriteButton>
+        <favoriteButton>
+            <command>Rock</command>
+            <label>Rock</label>
+        </favoriteButton>
+        <favoriteButton>
             <command>nickclean</command>
             <label>Nick Clean</label>
         </favoriteButton>
@@ -158,8 +174,8 @@
             <label>Uncage all</label>
         </favoriteButton>
         <favoriteButton>
-            <command>invis smite</command>
-            <label>Smite Invis</label>
+            <command>invis clear</command>
+            <label>Clear Invis</label>
         </favoriteButton>
         <favoriteButton>
             <command>invis</command>
@@ -168,70 +184,6 @@
         <favoriteButton>
             <command>stop</command>
             <label>Stop Server</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>onlinemode on</command>
-            <label>Onlinemode ON</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>onlinemode off</command>
-            <label>Onlinemode OFF</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle waterplace</command>
-            <label>Toggle Water Placement</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle fireplace</command>
-            <label>Toggle Fire Placement</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle lavaplace</command>
-            <label>Toggle Lava Placement</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle fluidspread</command>
-            <label>Toggle Fluid Spread</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle lavadmg</command>
-            <label>Toggle Lava Damage</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle firespread</command>
-            <label>Toggle Fire Spread</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle lockdown</command>
-            <label>Toggle Lockdown</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle explosives</command>
-            <label>Toggle Explosives</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle bells</command>
-            <label>Toggle Bells</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle grindstones</command>
-            <label>Toggle Grindstones</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle jukeboxes</command>
-            <label>Toggle Jukeboxes</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle spawners</command>
-            <label>Toggle Spawners</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle beehives</command>
-            <label>Toggle Beehives</label>
-        </favoriteButton>
-        <favoriteButton>
-            <command>toggle fireworks</command>
-            <label>Toggle Fireworks</label>
         </favoriteButton>
     </favoriteButtons>
     <theme>
