@@ -95,7 +95,7 @@ public class Themes {
         darkThemes.put("Nord", "nord");
         darkThemes.put("Spacegray", "spacegray");
         darkThemes.put("Vuesion", "vuesion");
-        darkThemes.put("Lyicx", "lyicx");
+        //darkThemes.put("Lyicx", "lyicx"); Soon
     }
 
     public void setupThemeTable(JTable themeTable)
