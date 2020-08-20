@@ -122,8 +122,8 @@
             <label>Cookie</label>
         </favoriteButton>
         <favoriteButton>
-            <command>Rock</command>
-            <label>Rock</label>
+            <command>Undisguise All</command>
+            <label>uall</label>
         </favoriteButton>
         <favoriteButton>
             <command>nickclean</command>
